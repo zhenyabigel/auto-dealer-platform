@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+psycopg2-binary = "*"
+celery = "*"
+redis = "*"
+djangorestframework-simplejwt = "*"
+django-debug-toolbar = "*"
+django-countries = "*"
+django-filter = "*"
+django-redis = "*"
+drf-yasg = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-django = "*"
+pytest-cov = "*"
+black = "*"
+isort = "*"
+flake8 = "*"
+mypy = "*"
+pylint = "*"
+faker = "*"
+
+[requires]
+python_version = "3.10"
