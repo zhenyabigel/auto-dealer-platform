@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "debug_toolbar",
-    'drf_yasg'
+    'drf_yasg',
+    'users',
+    'dealers',
+    'cars',
+    'deals',
 ]
 
 MIDDLEWARE = [
@@ -90,6 +94,8 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
+
+AUTH_USER_MODEL = 'users.User'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
