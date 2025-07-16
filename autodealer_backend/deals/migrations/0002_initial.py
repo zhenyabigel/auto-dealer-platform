@@ -9,37 +9,25 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("dealers", "0001_initial"),
-        ("deals", "0001_initial"),
-        ("users", "0001_initial"),
+        ('dealers', '0001_initial'),
+        ('deals', '0001_initial'),
+        ('users', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="deal",
-            name="customer",
-            field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE,
-                related_name="purchase_history",
-                to="users.customer",
-            ),
+            model_name='deal',
+            name='customer',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='purchase_history', to='users.customer'),
         ),
         migrations.AddField(
-            model_name="deal",
-            name="dealer",
-            field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE,
-                related_name="sales_history",
-                to="dealers.dealer",
-            ),
+            model_name='deal',
+            name='dealer',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='sales_history', to='dealers.dealer'),
         ),
         migrations.AddField(
-            model_name="offer",
-            name="customer",
-            field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE,
-                related_name="offers",
-                to="users.customer",
-            ),
+            model_name='offer',
+            name='customer',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='offers', to='users.customer'),
         ),
     ]
