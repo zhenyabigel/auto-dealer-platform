@@ -15,6 +15,10 @@ django-countries = "*"
 django-filter = "*"
 django-redis = "*"
 drf-yasg = "*"
+pytest = "*"
+factory-boy = "*"
+pytest-django = "*"
+faker = "*"
 
 [dev-packages]
 pytest = "*"

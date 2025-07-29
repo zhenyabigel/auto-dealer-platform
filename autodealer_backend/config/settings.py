@@ -36,13 +36,16 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "django.contrib.staticfiles",
     "debug_toolbar",
+    "django.contrib.staticfiles",
+    "rest_framework",
+    "rest_framework_simplejwt",
+    "django_filters",
     "drf_yasg",
-    "users",
-    "dealers",
-    "cars",
-    "deals",
+    "autodealer_backend.users",
+    "autodealer_backend.dealers",
+    "autodealer_backend.cars",
+    "autodealer_backend.deals",
 ]
 
 MIDDLEWARE = [
@@ -147,10 +150,32 @@ CACHES = {
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    )
+    ),
+    "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 20,
 }
-
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
+
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "Введите JWT токен в формате: Bearer <token>",
+        }
+    },
+    "USE_SESSION_AUTH": False,
+}
+
+SWAGGER_USE_COMPAT_RENDERERS = False
+
+TEST_RUNNER = "django.test.runner.DiscoverRunner"
+
+USE_TZ = True
+
+TIME_ZONE = "Europe/Moscow"

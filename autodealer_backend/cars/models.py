@@ -1,3 +1,4 @@
+from django.core.validators import MaxValueValidator
 from django.db import models
 
 
@@ -24,7 +25,7 @@ class Car(models.Model):
     ]
     brand = models.CharField(max_length=50)
     model = models.CharField(max_length=50)
-    year = models.PositiveIntegerField()
+    year = models.PositiveIntegerField(validators=[MaxValueValidator(2100)])
     engine_type = models.CharField(max_length=20, choices=ENGINE_TYPES)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.PositiveIntegerField(default=1)
