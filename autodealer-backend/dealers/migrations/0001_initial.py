@@ -8,22 +8,49 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Dealer',
+            name="Dealer",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, unique=True)),
-                ('location', django_countries.fields.CountryField(max_length=2)),
-                ('balance', models.DecimalField(decimal_places=2, default=0, help_text='Баланс в USD', max_digits=12)),
-                ('preferred_car_brands', models.JSONField(default=list, help_text="Список предпочитаемых брендов (например, ['Toyota', 'BMW'])")),
-                ('preferred_car_characteristics', models.JSONField(default=dict, help_text="Характеристики для подбора авто (например, {'year__gte': 2020})")),
-                ('is_active', models.BooleanField(default=True)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100, unique=True)),
+                ("location", django_countries.fields.CountryField(max_length=2)),
+                (
+                    "balance",
+                    models.DecimalField(
+                        decimal_places=2,
+                        default=0,
+                        help_text="Баланс в USD",
+                        max_digits=12,
+                    ),
+                ),
+                (
+                    "preferred_car_brands",
+                    models.JSONField(
+                        default=list,
+                        help_text="Список предпочитаемых брендов (например, ['Toyota', 'BMW'])",
+                    ),
+                ),
+                (
+                    "preferred_car_characteristics",
+                    models.JSONField(
+                        default=dict,
+                        help_text="Характеристики для подбора авто (например, {'year__gte': 2020})",
+                    ),
+                ),
+                ("is_active", models.BooleanField(default=True)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
             ],
         ),
     ]
