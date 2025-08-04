@@ -6,28 +6,46 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0004_alter_customer_options_alter_user_options_and_more'),
+        ("users", "0004_alter_customer_options_alter_user_options_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='verification_token',
-            field=models.CharField(blank=True, help_text='Токен для подтверждения email', max_length=64, null=True),
+            model_name="user",
+            name="verification_token",
+            field=models.CharField(
+                blank=True,
+                help_text="Токен для подтверждения email",
+                max_length=64,
+                null=True,
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='email',
-            field=models.EmailField(error_messages={'blank': 'Email is required', 'null': 'Email is required'}, help_text='Email пользователя (обязательное поле)', max_length=254, unique=True, verbose_name='email address'),
+            model_name="user",
+            name="email",
+            field=models.EmailField(
+                error_messages={
+                    "blank": "Email is required",
+                    "null": "Email is required",
+                },
+                help_text="Email пользователя (обязательное поле)",
+                max_length=254,
+                unique=True,
+                verbose_name="email address",
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='is_verified',
-            field=models.BooleanField(default=False, help_text='Флаг подтверждения email'),
+            model_name="user",
+            name="is_verified",
+            field=models.BooleanField(
+                default=False, help_text="Флаг подтверждения email"
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='phone',
-            field=models.CharField(blank=True, help_text='Номер телефона (необязательно)', max_length=20),
+            model_name="user",
+            name="phone",
+            field=models.CharField(
+                blank=True, help_text="Номер телефона (необязательно)", max_length=20
+            ),
         ),
     ]

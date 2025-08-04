@@ -6,16 +6,16 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0002_alter_customer_user_alter_user_groups_and_more'),
+        ("users", "0002_alter_customer_user_alter_user_groups_and_more"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='user',
+            name="user",
             options={},
         ),
         migrations.AlterModelTable(
-            name='user',
-            table='users_user',
+            name="user",
+            table="users_user",
         ),
     ]

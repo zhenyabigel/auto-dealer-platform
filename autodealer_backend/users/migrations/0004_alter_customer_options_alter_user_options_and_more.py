@@ -7,26 +7,40 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0003_alter_user_options_alter_user_table'),
+        ("users", "0003_alter_user_options_alter_user_table"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='customer',
-            options={'ordering': ['-id']},
+            name="customer",
+            options={"ordering": ["-id"]},
         ),
         migrations.AlterModelOptions(
-            name='user',
-            options={'ordering': ['-id']},
+            name="user",
+            options={"ordering": ["-id"]},
         ),
         migrations.AlterField(
-            model_name='customer',
-            name='balance',
-            field=models.DecimalField(decimal_places=2, default=0, help_text='Баланс в USD', max_digits=12, validators=[django.core.validators.MinValueValidator(0)]),
+            model_name="customer",
+            name="balance",
+            field=models.DecimalField(
+                decimal_places=2,
+                default=0,
+                help_text="Баланс в USD",
+                max_digits=12,
+                validators=[django.core.validators.MinValueValidator(0)],
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='email',
-            field=models.EmailField(error_messages={'blank': 'Email is required', 'null': 'Email is required'}, max_length=254, unique=True, verbose_name='email address'),
+            model_name="user",
+            name="email",
+            field=models.EmailField(
+                error_messages={
+                    "blank": "Email is required",
+                    "null": "Email is required",
+                },
+                max_length=254,
+                unique=True,
+                verbose_name="email address",
+            ),
         ),
     ]

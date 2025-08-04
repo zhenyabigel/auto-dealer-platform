@@ -1,6 +1,7 @@
+from decimal import Decimal
+
 import pytest
 from django.core.exceptions import ValidationError
-from decimal import Decimal
 
 from autodealer_backend.deals.tests.factories import DealFactory
 
@@ -15,10 +16,10 @@ class TestDealModel:
         assert deal.customer is not None
         assert deal.dealer is not None
         assert deal.car is not None
-        assert deal.price >= Decimal('0')
+        assert deal.price >= Decimal("0")
         assert deal.is_active is True
 
     def test_price_validation(self):
-        deal_test = DealFactory.build(price=Decimal('-100.00'))
+        deal_test = DealFactory.build(price=Decimal("-100.00"))
         with pytest.raises(ValidationError):
             deal_test.full_clean()

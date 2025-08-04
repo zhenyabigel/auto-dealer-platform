@@ -9,12 +9,8 @@ from .models import Dealer
 class DealerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dealer
-        fields = '__all__'
-        extra_kwargs = {
-            'balance': {
-                'validators': [MinValueValidator(Decimal('0.00'))]
-            }
-        }
+        fields = "__all__"
+        extra_kwargs = {"balance": {"validators": [MinValueValidator(Decimal("0.00"))]}}
 
     def validate_balance(self, value):
         if value < 0:

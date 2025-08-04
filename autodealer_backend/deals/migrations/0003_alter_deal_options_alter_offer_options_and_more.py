@@ -7,26 +7,36 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('deals', '0002_initial'),
+        ("deals", "0002_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='deal',
-            options={'ordering': ['-date']},
+            name="deal",
+            options={"ordering": ["-date"]},
         ),
         migrations.AlterModelOptions(
-            name='offer',
-            options={'ordering': ['-created_at']},
+            name="offer",
+            options={"ordering": ["-created_at"]},
         ),
         migrations.AlterField(
-            model_name='deal',
-            name='price',
-            field=models.DecimalField(decimal_places=2, help_text='Фактическая цена сделки', max_digits=10, validators=[django.core.validators.MinValueValidator(0)]),
+            model_name="deal",
+            name="price",
+            field=models.DecimalField(
+                decimal_places=2,
+                help_text="Фактическая цена сделки",
+                max_digits=10,
+                validators=[django.core.validators.MinValueValidator(0)],
+            ),
         ),
         migrations.AlterField(
-            model_name='offer',
-            name='max_price',
-            field=models.DecimalField(decimal_places=2, help_text='Максимальная цена, которую готов заплатить', max_digits=10, validators=[django.core.validators.MinValueValidator(0)]),
+            model_name="offer",
+            name="max_price",
+            field=models.DecimalField(
+                decimal_places=2,
+                help_text="Максимальная цена, которую готов заплатить",
+                max_digits=10,
+                validators=[django.core.validators.MinValueValidator(0)],
+            ),
         ),
     ]
