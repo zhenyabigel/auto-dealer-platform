@@ -11,7 +11,7 @@ class TestCarModel:
         return CarFactory()
 
     def test_car_creation(self, car):
-        assert car.brand in ['Toyota', 'BMW', 'Mercedes', 'Honda', 'Ford']
+        assert car.brand in ["Toyota", "BMW", "Mercedes", "Honda", "Ford"]
         assert car.is_active is True
 
     def test_invalid_year(self, car):
@@ -25,4 +25,4 @@ class TestCarModel:
         car_test = CarFactory(supplier=None)
         with pytest.raises(ValidationError) as excinfo:
             car_test.full_clean()
-        assert 'supplier' in str(excinfo.value)
+        assert "supplier" in str(excinfo.value)

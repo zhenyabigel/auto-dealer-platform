@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p>Здравствуйте, {{ user.username }}!</p>
+    <p>Для подтверждения email:</p>
+
+    <p><a href="{{ verification_url }}">Нажмите здесь</a></p>
+
+    <p>Или используйте API:</p>
+    <ul>
+        <li>Метод: <code>POST /api/auth/verify-email/</code></li>
+        <li>Тело запроса: <code>{ "token": "{{ token }}" }</code></li>
+    </ul>
+</body>
+</html>

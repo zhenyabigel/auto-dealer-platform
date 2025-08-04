@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinValueValidator
 from django.db import models
+from django.utils.crypto import get_random_string
 from django_countries.fields import CountryField
 
 
@@ -10,11 +11,18 @@ class User(AbstractUser):
         unique=True,
         blank=False,
         null=False,
+        help_text="Email пользователя (обязательное поле)",
         error_messages={"blank": "Email is required", "null": "Email is required"},
     )
-    phone = models.CharField(max_length=20, blank=True)
-    is_verified = models.BooleanField(default=False)
-
+    phone = models.CharField(
+        max_length=20, blank=True, help_text="Номер телефона (необязательно)"
+    )
+    is_verified = models.BooleanField(
+        default=False, help_text="Флаг подтверждения email"
+    )
+    verification_token = models.CharField(
+        max_length=64, blank=True, null=True, help_text="Токен для подтверждения email"
+    )
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username"]
 
@@ -29,6 +37,8 @@ class User(AbstractUser):
     def save(self, *args, **kwargs):
         if not self.email:
             raise ValueError("User must have an email address")
+        if not self.verification_token and not self.is_verified:
+            self.verification_token = get_random_string(64)
         super().save(*args, **kwargs)
 
 
