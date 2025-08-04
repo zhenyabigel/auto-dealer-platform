@@ -9,8 +9,14 @@ class SupplierFilter(django_filters.FilterSet):
     year_established__gt = django_filters.NumberFilter(
         field_name="year_established", lookup_expr="gt"
     )
+    year_established__gte = django_filters.NumberFilter(
+        field_name="year_established", lookup_expr="gte"
+    )
     year_established__lt = django_filters.NumberFilter(
         field_name="year_established", lookup_expr="lt"
+    )
+    year_established__lte = django_filters.NumberFilter(
+        field_name="year_established", lookup_expr="lte"
     )
     is_active = django_filters.BooleanFilter()
 
