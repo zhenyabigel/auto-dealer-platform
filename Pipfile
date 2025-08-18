@@ -19,6 +19,9 @@ pytest = "*"
 factory-boy = "*"
 pytest-django = "*"
 faker = "*"
+django-seed = "*"
+flower = ">=1.2.0"
+django-celery-results = ">=2.5.0"  # Для хранения результатов (опционально)
 
 [dev-packages]
 pytest = "*"

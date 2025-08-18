@@ -54,8 +54,12 @@ class UserSerializer(serializers.ModelSerializer):
         read_only_fields = ["is_verified", "date_joined"]
 
 
-class CustomerSerializer(serializers.ModelSerializer):
+from django_countries.serializers import CountryFieldMixin
+
+
+class CustomerSerializer(CountryFieldMixin, serializers.ModelSerializer):
     user = UserSerializer()
+    country = serializers.CharField()  # Explicitly declare country as CharField
 
     class Meta:
         model = Customer
@@ -70,6 +74,11 @@ class CustomerSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ["is_active", "created_at"]
 
+    def to_representation(self, instance):
+        ret = super().to_representation(instance)
+        ret["country"] = instance.country.code if instance.country else None
+        return ret
+
     def update(self, instance, validated_data):
         user_data = validated_data.pop("user", None)
         if user_data:
@@ -78,6 +87,10 @@ class CustomerSerializer(serializers.ModelSerializer):
             )
             user_serializer.is_valid(raise_exception=True)
             user_serializer.save()
+        country = validated_data.pop("country", None)
+        if country:
+            instance.country = country
+
         return super().update(instance, validated_data)
 
 

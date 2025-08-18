@@ -29,5 +29,49 @@ services:
       - db
       - redis
 
+  flower:
+    build: .  # Используем тот же Dockerfile, что и для основного приложения
+    command: >
+      sh -c "pip install flower && 
+      celery -A autodealer_backend.celery_app flower --port=5555"
+    volumes:
+      - .:/app
+    working_dir: /app/autodealer_backend
+    environment:
+      - PYTHONPATH=/app
+      - DJANGO_SETTINGS_MODULE=config.settings
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    ports:
+      - "5555:5555"
+    depends_on:
+      - redis
+      - web
+  celery-worker:
+    build: .
+    command: celery -A autodealer_backend.celery_app worker --loglevel=info
+    volumes:
+      - .:/app
+    working_dir: /app/autodealer_backend
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings
+      - PYTHONPATH=/app
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+      - db
+  celery-beat:
+    build: .
+    command: celery -A autodealer_backend.celery_app beat --loglevel=info
+    volumes:
+      - .:/app
+    working_dir: /app/autodealer_backend
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings
+      - PYTHONPATH=/app
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+      - db
+
 volumes:
   postgres_data:
