@@ -19,6 +19,8 @@ pytest = "*"
 factory-boy = "*"
 pytest-django = "*"
 faker = "*"
+django-seed = "*"
+flower = ">=1.2.0"
 
 [dev-packages]
 pytest = "*"

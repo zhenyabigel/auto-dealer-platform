@@ -1,0 +1,11 @@
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
+
+from autodealer_backend.promotion.viewsets import PromotionCarViewSet, PromotionViewSet
+
+router = DefaultRouter()
+router.register(r"", PromotionViewSet, basename="promotion")
+router.register(r"promotion-cars", PromotionCarViewSet, basename="promotion-car")
+urlpatterns = [
+    path("", include(router.urls)),
+]
