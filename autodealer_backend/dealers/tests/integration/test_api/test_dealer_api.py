@@ -2,7 +2,8 @@ import pytest
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from autodealer_backend.dealers.tests.factories import DealerFactory
+from autodealer_backend.cars.tests.factories import CarModelFactory
+from autodealer_backend.dealers.tests.factories.dealer_factory import DealerFactory
 from autodealer_backend.users.tests.factories import UserFactory
 
 
@@ -11,48 +12,93 @@ class TestDealerAPI:
     @pytest.fixture(autouse=True)
     def setup(self):
         self.client = APIClient()
-        self.user = UserFactory()
-        self.dealer1 = DealerFactory(
-            name="Best Cars", location="US", balance=100000.00, is_active=True
-        )
-        self.dealer2 = DealerFactory(
-            name="Auto World", location="DE", balance=50000.00, is_active=False
-        )
+        self.admin = UserFactory(is_staff=True, is_superuser=True)
+        self.dealer_user = UserFactory(role="dealer")
+        self.customer = UserFactory(role="customer")
+        self.dealer = DealerFactory(user=self.dealer_user)
+        self.car_model = CarModelFactory()
+        self.dealer.preferred_car_models.add(self.car_model)
 
-    def _get_results(self, response):
-        return response.data["results"] if "results" in response.data else response.data
-
-    def test_get_dealer_list(self):
-        self.client.force_authenticate(user=self.user)
+    def test_list_dealers_authenticated(self):
+        self.client.force_authenticate(user=self.admin)
         response = self.client.get("/api/dealers/")
         assert response.status_code == status.HTTP_200_OK
-        results = self._get_results(response)
-        assert len(results) >= 2
+        assert "results" in response.data
+        assert len(response.data["results"]) >= 1
 
-    def test_filter_by_location(self):
-        self.client.force_authenticate(user=self.user)
-        response = self.client.get("/api/dealers/?location=US")
-        assert response.status_code == status.HTTP_200_OK
-        results = self._get_results(response)
-        assert any(d["location"] == "US" for d in results)
+    def test_list_dealers_unauthenticated(self):
+        response = self.client.get("/api/dealers/")
+        assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
-    def test_filter_by_balance(self):
-        self.client.force_authenticate(user=self.user)
-        response = self.client.get("/api/dealers/?balance__gt=75000")
+    def test_retrieve_dealer_detail(self):
+        self.client.force_authenticate(user=self.customer)
+        response = self.client.get(f"/api/dealers/{self.dealer.id}/")
         assert response.status_code == status.HTTP_200_OK
-        results = self._get_results(response)
-        assert all(float(d["balance"]) > 75000 for d in results)
+        assert response.data["name"] == self.dealer.name
+        assert "preferred_car_models" in response.data
+        assert len(response.data["preferred_car_models"]) == 1
 
-    def test_filter_active(self):
-        self.client.force_authenticate(user=self.user)
-        response = self.client.get("/api/dealers/?is_active=true")
-        assert response.status_code == status.HTTP_200_OK
-        results = self._get_results(response)
-        assert all(d["is_active"] is True for d in results)
+    def test_non_admin_cannot_create_dealer(self):
+        self.client.force_authenticate(user=self.customer)
+        data = {"name": "Hacker Dealer", "location": "US", "phone": "+1"}
+        response = self.client.post("/api/dealers/", data, format="json")
+        assert response.status_code == status.HTTP_403_FORBIDDEN
 
-    def test_search_by_name(self):
-        self.client.force_authenticate(user=self.user)
-        response = self.client.get("/api/dealers/?search=Best")
+    def test_admin_can_create_dealer(self):
+        self.client.force_authenticate(user=self.admin)
+        user = UserFactory(role="dealer")
+        data = {
+            "user": user.id,
+            "name": "Premium Motors",
+            "location": "US",
+            "phone": "+1234567890",
+            "balance": "50000.00",
+        }
+        response = self.client.post("/api/dealers/", data, format="json")
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data["name"] == "Premium Motors"
+        assert response.data["user"] == user.id
+
+    def test_admin_can_update_any_dealer(self):
+        self.client.force_authenticate(user=self.admin)
+        data = {"name": "Admin Updated Name"}
+        response = self.client.patch(
+            f"/api/dealers/{self.dealer.id}/", data, format="json"
+        )
         assert response.status_code == status.HTTP_200_OK
-        results = self._get_results(response)
-        assert any("Best" in d["name"] for d in results)
+        assert response.data["name"] == "Admin Updated Name"
+
+    def test_update_dealer_by_owner_or_admin(self):
+        self.client.force_authenticate(user=self.dealer_user)
+        data = {"name": "Updated Name", "phone": "+9876543210"}
+        response = self.client.patch(
+            f"/api/dealers/{self.dealer.id}/", data, format="json"
+        )
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["name"] == "Updated Name"
+
+    def test_customer_cannot_update_dealer(self):
+        self.client.force_authenticate(user=self.customer)
+        data = {"name": "Hacked"}
+        response = self.client.patch(f"/api/dealers/{self.dealer.id}/", data)
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+
+    def test_filter_dealers_by_location(self):
+        DealerFactory(name="Moscow Dealer", location="RU")
+        DealerFactory(name="Berlin Dealer", location="DE")
+
+        self.client.force_authenticate(user=self.customer)
+        response = self.client.get("/api/dealers/?location=RU")
+        assert response.status_code == status.HTTP_200_OK
+        names = [item["name"] for item in response.data["results"]]
+        assert "Moscow Dealer" in names
+        assert "Berlin Dealer" not in names
+
+    def test_search_dealers_by_name(self):
+        DealerFactory(name="Luxury Auto Center")
+        DealerFactory(name="Budget Cars")
+
+        self.client.force_authenticate(user=self.customer)
+        response = self.client.get("/api/dealers/?search=Luxury")
+        assert response.status_code == status.HTTP_200_OK
+        assert any("Luxury" in item["name"] for item in response.data["results"])

@@ -28,8 +28,14 @@ class CarFeature(models.Model):
     class Meta:
         unique_together = ("car_model", "name")
         app_label = "cars"
+        ordering = ["car_model", "name"]
         verbose_name = "Особенность автомобиля"
         verbose_name_plural = "Особенности автомобилей"
 
     def __str__(self):
         return f"{self.car_model}: {self.name}"
+
+    def save(self, *args, **kwargs):
+        if self.is_standard is not None and self.is_optional is None:
+            self.is_optional = not self.is_standard
+        super().save(*args, **kwargs)

@@ -13,6 +13,9 @@ class DealerStockFilter(django_filters.FilterSet):
     car_model = django_filters.CharFilter(
         field_name="car_model__model", lookup_expr="icontains"
     )
+    car_model_id = django_filters.NumberFilter(
+        field_name="car_model__id", label="Car Model ID"
+    )
     price__gt = django_filters.NumberFilter(
         field_name="selling_price", lookup_expr="gt"
     )

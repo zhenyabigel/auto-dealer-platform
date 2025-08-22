@@ -1,14 +1,14 @@
-from decimal import Decimal
-
-from django.core.validators import MinValueValidator
 from rest_framework import serializers
 
 from autodealer_backend.cars.serializers import CarModelSerializer
 from autodealer_backend.dealers.models import Dealer
+from autodealer_backend.users.models import User
 
 
 class DealerSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(slug_field="username", read_only=True)
+    user = serializers.PrimaryKeyRelatedField(
+        queryset=User.objects.filter(role="dealer")
+    )
     location = serializers.SerializerMethodField()
     stock_count = serializers.IntegerField(read_only=True)
     total_stock_value = serializers.DecimalField(
@@ -48,7 +48,11 @@ class DealerSerializer(serializers.ModelSerializer):
             "stock_count",
             "total_stock_value",
         ]
-        extra_kwargs = {"balance": {"validators": [MinValueValidator(Decimal("0.00"))]}}
+
+    def update(self, instance, validated_data):
+        # user нельзя менять
+        validated_data.pop("user", None)
+        return super().update(instance, validated_data)
 
     def get_location(self, obj):
         return obj.location.name if obj.location else None

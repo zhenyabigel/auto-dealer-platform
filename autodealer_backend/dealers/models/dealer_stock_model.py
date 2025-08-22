@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 
 from autodealer_backend.cars.models import CarModel
@@ -41,6 +42,21 @@ class DealerStock(models.Model):
 
     def __str__(self):
         return f"{self.car_model} ({self.condition}) - {self.dealer.name}"
+
+    def clean(self):
+        super().clean()
+        if (
+            self.selling_price
+            and self.purchase_price
+            and self.selling_price < self.purchase_price
+        ):
+            raise ValidationError(
+                {"selling_price": "Цена продажи не может быть меньше цены покупки."}
+            )
+
+    def save(self, *args, **kwargs):
+        self.full_clean()  # Вызываем валидацию перед сохранением
+        super().save(*args, **kwargs)
 
     @property
     def profit(self):

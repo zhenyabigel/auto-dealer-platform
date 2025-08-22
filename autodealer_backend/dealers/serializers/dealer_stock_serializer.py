@@ -2,13 +2,19 @@ from rest_framework import serializers
 
 from autodealer_backend.cars.models.car_model import CarModel
 from autodealer_backend.cars.serializers import CarModelSerializer
-from autodealer_backend.dealers.models import DealerStock
+from autodealer_backend.dealers.models import Dealer, DealerStock
 from autodealer_backend.suppliers.models import Supplier
 from autodealer_backend.suppliers.serializers import SupplierSerializer
 
 
 class DealerStockSerializer(serializers.ModelSerializer):
     dealer = serializers.SlugRelatedField(slug_field="name", read_only=True)
+    dealer_id = serializers.PrimaryKeyRelatedField(
+        queryset=Dealer.objects.all(),
+        source="dealer",
+        write_only=True,
+        required=False,  # Optional — will be auto-assigned in perform_create if not provided
+    )
     car_model = CarModelSerializer(read_only=True)
     car_model_id = serializers.PrimaryKeyRelatedField(
         queryset=CarModel.objects.all(), source="car_model", write_only=True
@@ -31,6 +37,7 @@ class DealerStockSerializer(serializers.ModelSerializer):
         fields = [
             "id",
             "dealer",
+            "dealer_id",  # ✅ Add this
             "car_model",
             "car_model_id",
             "supplier",
@@ -55,6 +62,7 @@ class DealerStockSerializer(serializers.ModelSerializer):
             "purchase_price": {"min_value": 0},
             "selling_price": {"min_value": 0},
             "mileage": {"min_value": 0},
+            "color": {"required": False},
         }
 
     def validate_vin(self, value):

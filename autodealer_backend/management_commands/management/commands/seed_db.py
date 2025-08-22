@@ -7,7 +7,7 @@ from django.db import transaction
 from django.utils import timezone
 from faker import Faker
 
-fake = Faker("ru_RU")  # Русская локализация
+fake = Faker("ru_RU")
 
 
 class Command(BaseCommand):

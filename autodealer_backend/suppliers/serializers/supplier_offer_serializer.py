@@ -1,8 +1,10 @@
 from rest_framework import serializers
 
 from autodealer_backend.cars.models import CarModel
-from autodealer_backend.suppliers.models import SupplierOffer
-from autodealer_backend.users.models import User
+from autodealer_backend.suppliers.models import (  # Импортируем Supplier
+    Supplier,
+    SupplierOffer,
+)
 
 
 class SupplierOfferSerializer(serializers.ModelSerializer):
@@ -12,7 +14,7 @@ class SupplierOfferSerializer(serializers.ModelSerializer):
     is_active_now = serializers.BooleanField(read_only=True)
 
     supplier_id = serializers.PrimaryKeyRelatedField(
-        queryset=User.objects.filter(role="supplier"),
+        queryset=Supplier.objects.all(),  # Исправлено: используем Supplier, а не User
         source="supplier",
         write_only=True,
     )

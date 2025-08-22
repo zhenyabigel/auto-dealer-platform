@@ -73,6 +73,4 @@ class CarModel(models.Model):
         verbose_name_plural = "Модели автомобилей"
 
     def __str__(self):
-        return f"{self.brand} {self.model}" + (
-            f" ({self.generation})" if self.generation else ""
-        )
+        return f"{self.brand} {self.model}"

@@ -3,6 +3,7 @@ from datetime import timedelta
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+from autodealer_backend.celery_beat import CELERY_BEAT_SCHEDULE
 
 SECRET_KEY = "django-insecure-ek1^w-^$gx97)j)j5f8y@m1a@06zbav+d0ts43)s^m1-0f7lfo"
 DEBUG = True
@@ -29,6 +30,8 @@ INSTALLED_APPS = [
     "autodealer_backend.deals",
     "autodealer_backend.suppliers",
     "autodealer_backend.promotion",
+    # Celery beat
+    "django_celery_beat",
 ]
 
 MIDDLEWARE = [
@@ -139,8 +142,9 @@ SWAGGER_SETTINGS = {
     },
     "USE_SESSION_AUTH": False,
 }
+SWAGGER_USE_COMPAT_RENDERERS = False
+
 # Cache & Celery
-CELERY_BROKER_URL = "redis://localhost:6379/0"
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
@@ -150,3 +154,12 @@ CACHES = {
         },
     }
 }
+CELERY_BROKER_URL = "redis://redis:6379/0"
+CELERY_RESULT_BACKEND = "redis://redis:6379/0"
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TIMEZONE = "Europe/Moscow"
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+CELERY_BEAT_SCHEDULE = CELERY_BEAT_SCHEDULE

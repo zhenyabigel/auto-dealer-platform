@@ -82,7 +82,7 @@ class SupplierOffer(models.Model):
 
     def get_car_name(self):
         if self.car_model:
-            return str(self.car_model)
+            return f"{self.car_model.brand} {self.car_model.model}"
         return f"{self.raw_brand} {self.raw_model} (raw)"
 
     @property
