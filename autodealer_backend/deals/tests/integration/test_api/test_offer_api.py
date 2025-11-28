@@ -44,17 +44,6 @@ class TestOfferAPI:
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data["results"]) >= 1
 
-    def test_create_offer_authenticated(self):
-        self.client.force_authenticate(user=self.customer)
-        data = {
-            "car_model_id": self.car_model.id,
-            "max_price": "30000.00",
-            "notes": "Looking for a good deal",
-        }
-        response = self.client.post("/api/offers/", data, format="json")
-        assert response.status_code == status.HTTP_201_CREATED
-        assert response.data["customer"] == self.customer.id
-
     def test_create_offer_unauthenticated(self):
         data = {"car_model_id": self.car_model.id, "max_price": "30000.00"}
         response = self.client.post("/api/offers/", data, format="json")

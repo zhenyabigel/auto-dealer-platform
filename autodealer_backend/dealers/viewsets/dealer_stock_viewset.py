@@ -33,7 +33,7 @@ class DealerStockViewSet(
     search_fields = ["car_model__brand", "car_model__model", "vin", "dealer__name"]
     ordering_fields = ["selling_price", "arrival_date", "mileage"]
     ordering = ["-arrival_date"]
-    permission_classes = [permissions.IsAuthenticated]  # Default permission
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_permissions(self):
         if self.action in ["list", "retrieve"]:

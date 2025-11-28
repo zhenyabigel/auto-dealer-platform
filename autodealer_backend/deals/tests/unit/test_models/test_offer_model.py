@@ -16,12 +16,10 @@ class TestOfferModel:
         assert str(offer) == f"Оффер #{offer.id} ({car_model})"
 
     def test_is_expired_property(self):
-        # Не истекший оффер
         future_date = timezone.now() + timedelta(days=1)
         offer = OfferFactory(expiry_date=future_date)
         assert offer.is_expired is False
 
-        # Истекший оффер
         past_date = timezone.now() - timedelta(days=1)
         offer = OfferFactory(expiry_date=past_date)
         assert offer.is_expired is True

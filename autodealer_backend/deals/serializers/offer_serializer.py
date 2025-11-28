@@ -2,7 +2,6 @@ from rest_framework import serializers
 
 from autodealer_backend.cars.models import CarModel
 from autodealer_backend.deals.models.offer_model import Offer
-from autodealer_backend.users.models import User
 
 
 class OfferSerializer(serializers.ModelSerializer):
@@ -14,13 +13,6 @@ class OfferSerializer(serializers.ModelSerializer):
     car_model_id = serializers.PrimaryKeyRelatedField(
         queryset=CarModel.objects.all(), source="car_model", write_only=True
     )
-    preferred_dealer_ids = serializers.PrimaryKeyRelatedField(
-        queryset=User.objects.filter(role="dealer"),
-        source="preferred_dealers",
-        many=True,
-        write_only=True,
-        required=False,
-    )
 
     class Meta:
         model = Offer
@@ -28,12 +20,9 @@ class OfferSerializer(serializers.ModelSerializer):
             "id",
             "customer",
             "customer_name",
-            "car_model",
             "car_model_id",
             "car_model_info",
             "max_price",
-            "preferred_dealers",
-            "preferred_dealer_ids",
             "status",
             "status_display",
             "expiry_date",
@@ -43,7 +32,13 @@ class OfferSerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
         ]
-        read_only_fields = ["customer", "status", "created_at", "updated_at"]
+        read_only_fields = [
+            "car_model",
+            "customer",
+            "status",
+            "created_at",
+            "updated_at",
+        ]
 
     def validate_max_price(self, value):
         if value <= 0:

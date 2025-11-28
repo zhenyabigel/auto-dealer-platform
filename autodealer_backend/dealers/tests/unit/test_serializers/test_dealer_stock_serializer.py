@@ -14,52 +14,106 @@ class TestDealerStockSerializer:
         dealer = DealerFactory()
         car_model = CarModelFactory()
         supplier = SupplierFactory()
-        data = {
-            "dealer": dealer.id,
+
+        valid_data = {
+            "dealer_id": dealer.id,
             "car_model_id": car_model.id,
             "supplier_id": supplier.id,
-            "purchase_price": "20000.00",
-            "selling_price": "25000.00",
-            "vin": "1HGBH41JXMN109186",
-            "color": "Red",
+            "purchase_price": "25000.00",
+            "selling_price": "30000.00",
+            "vin": "1HGCM82633A123456",
+            "mileage": 0,
+            "color": "Black",
             "condition": "new",
-            "arrival_date": "2025-01-01",
+            "arrival_date": "2024-01-15",
         }
-        serializer = DealerStockSerializer(data=data)
-        assert serializer.is_valid(), serializer.errors
 
-    def test_vin_validation(self):
-        data = {
-            "dealer": DealerFactory().id,
-            "car_model_id": CarModelFactory().id,
-            "purchase_price": "20000",
-            "selling_price": "25000",
-            "vin": "SHORT",
-            "color": "Red",
-            "arrival_date": "2025-01-01",
-        }
-        serializer = DealerStockSerializer(data=data)
-        assert not serializer.is_valid()
-        assert "vin" in serializer.errors
+        serializer = DealerStockSerializer(data=valid_data)
+        assert serializer.is_valid(), f"Serializer errors: {serializer.errors}"
 
-    def test_price_validation(self):
+        stock_item = serializer.save()
+        assert stock_item.dealer == dealer
+        assert stock_item.car_model == car_model
+
+    def test_vin_validation_correct_length(self):
         dealer = DealerFactory()
         car_model = CarModelFactory()
         supplier = SupplierFactory()
 
-        data = {
-            "dealer": dealer.id,
+        valid_data = {
+            "dealer_id": dealer.id,
             "car_model_id": car_model.id,
             "supplier_id": supplier.id,
-            "purchase_price": "30000",
-            "selling_price": "25000",  # Меньше покупки
-            "vin": "1HGBH41JXMN109186",
-            "color": "Red",
-            "arrival_date": "2025-01-01",
+            "purchase_price": "25000.00",
+            "selling_price": "30000.00",
+            "vin": "1HGCM82633A123456",
+            "mileage": 0,
+            "arrival_date": "2024-01-15",
         }
-        serializer = DealerStockSerializer(data=data)
+
+        serializer = DealerStockSerializer(data=valid_data)
+        assert serializer.is_valid(), f"Serializer errors: {serializer.errors}"
+
+    def test_vin_validation_incorrect_length(self):
+        dealer = DealerFactory()
+        car_model = CarModelFactory()
+        supplier = SupplierFactory()
+
+        invalid_data = {
+            "dealer_id": dealer.id,
+            "car_model_id": car_model.id,
+            "supplier_id": supplier.id,
+            "purchase_price": "25000.00",
+            "selling_price": "30000.00",
+            "vin": "SHORTVIN",
+            "arrival_date": "2024-01-15",
+        }
+
+        serializer = DealerStockSerializer(data=invalid_data)
         assert not serializer.is_valid()
-        assert "non_field_errors" in serializer.errors
-        assert "Цена продажи не может быть меньше цены покупки" in str(
-            serializer.errors
-        )
+        assert "vin" in serializer.errors
+        assert "17 символов" in str(serializer.errors["vin"])
+
+    def test_price_validation_valid(self):
+        dealer = DealerFactory()
+        car_model = CarModelFactory()
+        supplier = SupplierFactory()
+
+        valid_data = {
+            "dealer_id": dealer.id,
+            "car_model_id": car_model.id,
+            "supplier_id": supplier.id,
+            "purchase_price": "25000.00",
+            "selling_price": "30000.00",
+            "vin": "1HGCM82633A123456",
+            "arrival_date": "2024-01-15",
+        }
+
+        serializer = DealerStockSerializer(data=valid_data)
+        assert serializer.is_valid(), f"Serializer errors: {serializer.errors}"
+
+    def test_price_validation_invalid(self):
+        dealer = DealerFactory()
+        car_model = CarModelFactory()
+        supplier = SupplierFactory()
+
+        invalid_data = {
+            "dealer_id": dealer.id,
+            "car_model_id": car_model.id,
+            "supplier_id": supplier.id,
+            "purchase_price": "30000.00",
+            "selling_price": "25000.00",
+            "vin": "1HGCM82633A123456",
+            "arrival_date": "2024-01-15",
+        }
+
+        serializer = DealerStockSerializer(data=invalid_data)
+        assert not serializer.is_valid()
+
+        has_price_error = False
+        for field, errors in serializer.errors.items():
+            for error in errors:
+                if "Цена продажи не может быть меньше цены покупки" in str(error):
+                    has_price_error = True
+                    break
+        assert has_price_error, "Should have price validation error"

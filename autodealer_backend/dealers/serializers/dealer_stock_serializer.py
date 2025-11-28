@@ -13,7 +13,7 @@ class DealerStockSerializer(serializers.ModelSerializer):
         queryset=Dealer.objects.all(),
         source="dealer",
         write_only=True,
-        required=False,  # Optional — will be auto-assigned in perform_create if not provided
+        required=False,
     )
     car_model = CarModelSerializer(read_only=True)
     car_model_id = serializers.PrimaryKeyRelatedField(
@@ -37,7 +37,7 @@ class DealerStockSerializer(serializers.ModelSerializer):
         fields = [
             "id",
             "dealer",
-            "dealer_id",  # ✅ Add this
+            "dealer_id",
             "car_model",
             "car_model_id",
             "supplier",

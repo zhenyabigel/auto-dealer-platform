@@ -4,24 +4,30 @@ from autodealer_backend.dealers.tests.factories.dealer_stock_factory import (
     DealerStockFactory,
 )
 from autodealer_backend.deals.serializers import DealSerializer
-from autodealer_backend.users.tests.factories.user_factory import DealerUserFactory
+from autodealer_backend.users.tests.factories.user_factory import (
+    CustomerUserFactory,
+    DealerUserFactory,
+)
 
 
 @pytest.mark.django_db
 class TestDealSerializer:
     def test_serializer_valid_sale_deal(self):
         dealer = DealerUserFactory()
-        dealer_stock = DealerStockFactory(dealer=dealer.dealer_profile)
+        customer = CustomerUserFactory()
+        dealer_stock = DealerStockFactory(dealer=dealer)
 
         data = {
             "deal_type": "sale",
             "dealer_stock_id": dealer_stock.id,
+            "customer_id": customer.id,
             "price": "25000.00",
             "quantity": 1,
+            "notes": "Test sale deal",
         }
 
         serializer = DealSerializer(data=data)
-        assert serializer.is_valid() is True
+        assert serializer.is_valid() is True, serializer.errors
 
     def test_serializer_sale_deal_without_stock(self):
         data = {"deal_type": "sale", "price": "25000.00", "quantity": 1}
