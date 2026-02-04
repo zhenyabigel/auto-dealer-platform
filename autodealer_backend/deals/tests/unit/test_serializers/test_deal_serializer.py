@@ -1,20 +1,22 @@
 import pytest
+from users.tests.factories.customer_user_factory import CustomerUserFactory
+from users.tests.factories.dealer_user_factory import DealerUserFactory
 
 from autodealer_backend.dealers.tests.factories.dealer_stock_factory import (
     DealerStockFactory,
 )
 from autodealer_backend.deals.serializers import DealSerializer
-from autodealer_backend.users.tests.factories.user_factory import (
-    CustomerUserFactory,
-    DealerUserFactory,
-)
 
 
 @pytest.mark.django_db
 class TestDealSerializer:
     def test_serializer_valid_sale_deal(self):
-        dealer = DealerUserFactory()
+        # Используем DealerUserFactory
+        dealer_user = DealerUserFactory()
+        dealer = dealer_user.dealer_profile  # Получаем созданный Dealer
+
         customer = CustomerUserFactory()
+
         dealer_stock = DealerStockFactory(dealer=dealer)
 
         data = {
@@ -44,8 +46,10 @@ class TestDealSerializer:
         assert "supplier_offer" in str(serializer.errors)
 
     def test_serializer_sold_car_validation(self):
-        dealer = DealerUserFactory()
-        dealer_stock = DealerStockFactory(dealer=dealer.dealer_profile, is_sold=True)
+        dealer_user = DealerUserFactory()
+        dealer = dealer_user.dealer_profile  # Получаем созданный Dealer
+
+        dealer_stock = DealerStockFactory(dealer=dealer, is_sold=True)
 
         data = {
             "deal_type": "sale",

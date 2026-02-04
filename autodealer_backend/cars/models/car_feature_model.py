@@ -12,18 +12,20 @@ class CarFeature(models.Model):
         ("interior", "Интерьер"),
     )
 
-    car_model = models.ForeignKey(
+    car_model: models.ForeignKey = models.ForeignKey(
         CarModel, on_delete=models.CASCADE, related_name="features"
     )
-    category = models.CharField(
+    category: models.CharField = models.CharField(
         max_length=20, choices=FEATURE_CATEGORIES, default="comfort"
     )
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    is_standard = models.BooleanField(
+    name: models.CharField = models.CharField(max_length=100)
+    description: models.TextField = models.TextField(blank=True)
+    is_standard: models.BooleanField = models.BooleanField(
         default=False, help_text="Входит в базовую комплектацию"
     )
-    is_optional = models.BooleanField(default=False, help_text="Доступно как опция")
+    is_optional: models.BooleanField = models.BooleanField(
+        default=False, help_text="Доступно как опция"
+    )
 
     class Meta:
         unique_together = ("car_model", "name")

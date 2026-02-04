@@ -4,7 +4,8 @@ from rest_framework.test import APIClient
 
 from autodealer_backend.cars.tests.factories import CarModelFactory
 from autodealer_backend.dealers.tests.factories.dealer_factory import DealerFactory
-from autodealer_backend.users.tests.factories import UserFactory
+from autodealer_backend.users.tests.factories.admin_user_factory import AdminUserFactory
+from autodealer_backend.users.tests.factories.user_factory import UserFactory
 
 
 @pytest.mark.django_db
@@ -12,10 +13,9 @@ class TestDealerAPI:
     @pytest.fixture(autouse=True)
     def setup(self):
         self.client = APIClient()
-        self.admin = UserFactory(is_staff=True, is_superuser=True)
-        self.dealer_user = UserFactory(role="dealer")
+        self.admin = AdminUserFactory()
+        self.dealer = DealerFactory()
         self.customer = UserFactory(role="customer")
-        self.dealer = DealerFactory(user=self.dealer_user)
         self.car_model = CarModelFactory()
         self.dealer.preferred_car_models.add(self.car_model)
 
@@ -46,7 +46,14 @@ class TestDealerAPI:
 
     def test_admin_can_create_dealer(self):
         self.client.force_authenticate(user=self.admin)
-        user = UserFactory(role="dealer")
+
+        # Создаем нового пользователя для дилера
+        from autodealer_backend.users.tests.factories.dealer_user_factory import (
+            DealerUserFactory,
+        )
+
+        user = DealerUserFactory()  # Создаем пользователя с role="dealer"
+
         data = {
             "user": user.id,
             "name": "Premium Motors",
@@ -69,7 +76,8 @@ class TestDealerAPI:
         assert response.data["name"] == "Admin Updated Name"
 
     def test_update_dealer_by_owner_or_admin(self):
-        self.client.force_authenticate(user=self.dealer_user)
+        # Используем пользователя дилера, а не создаем нового
+        self.client.force_authenticate(user=self.dealer.user)
         data = {"name": "Updated Name", "phone": "+9876543210"}
         response = self.client.patch(
             f"/api/dealers/{self.dealer.id}/", data, format="json"
@@ -84,8 +92,9 @@ class TestDealerAPI:
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
     def test_filter_dealers_by_location(self):
-        DealerFactory(name="Moscow Dealer", location="RU")
-        DealerFactory(name="Berlin Dealer", location="DE")
+        # Создаем новых дилеров для фильтрации
+        moscow_dealer = DealerFactory(name="Moscow Dealer", location="RU")
+        berlin_dealer = DealerFactory(name="Berlin Dealer", location="DE")
 
         self.client.force_authenticate(user=self.customer)
         response = self.client.get("/api/dealers/?location=RU")
@@ -95,6 +104,7 @@ class TestDealerAPI:
         assert "Berlin Dealer" not in names
 
     def test_search_dealers_by_name(self):
+        # Создаем новых дилеров для поиска
         DealerFactory(name="Luxury Auto Center")
         DealerFactory(name="Budget Cars")
 

@@ -10,6 +10,6 @@ RUN pip install pipenv && pipenv install --system --deploy --ignore-pipfile
 
 COPY . /app/
 
-WORKDIR /app/autodealer-backend
+WORKDIR /app/autodealer_backend
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

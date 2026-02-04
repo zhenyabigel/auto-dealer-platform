@@ -12,32 +12,34 @@ class Supplier(models.Model):
         ("used", "Поставщик б/у авто"),
     )
 
-    user = models.OneToOneField(
+    user: models.OneToOneField = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
         related_name="supplier_profile",
         limit_choices_to={"role": "supplier"},
     )
-    name = models.CharField(max_length=100, unique=True)
-    legal_name = models.CharField(max_length=200, blank=True)
-    supplier_type = models.CharField(max_length=20, choices=SUPPLIER_TYPES)
-    year_established = models.PositiveIntegerField()
-    country = CountryField()
-    city = models.CharField(max_length=100)
-    address = models.TextField()
-    phone = models.CharField(max_length=20)
-    email = models.EmailField()
-    website = models.URLField(blank=True)
-    contact_person = models.CharField(max_length=100)
-    average_delivery_time = models.PositiveIntegerField(
+    name: models.CharField = models.CharField(max_length=100, unique=True)
+    legal_name: models.CharField = models.CharField(max_length=200, blank=True)
+    supplier_type: models.CharField = models.CharField(
+        max_length=20, choices=SUPPLIER_TYPES
+    )
+    year_established: models.PositiveIntegerField = models.PositiveIntegerField()
+    country: CountryField = CountryField()
+    city: models.CharField = models.CharField(max_length=100)
+    address: models.TextField = models.TextField()
+    phone: models.CharField = models.CharField(max_length=20)
+    email: models.EmailField = models.EmailField()
+    website: models.URLField = models.URLField(blank=True)
+    contact_person: models.CharField = models.CharField(max_length=100)
+    average_delivery_time: models.PositiveIntegerField = models.PositiveIntegerField(
         default=14, help_text="Средний срок поставки в днях"
     )
-    discount_for_dealers = models.PositiveIntegerField(
+    discount_for_dealers: models.PositiveIntegerField = models.PositiveIntegerField(
         default=0, help_text="Базовая скидка для дилеров (%)"
     )
-    is_active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    is_active: models.BooleanField = models.BooleanField(default=True)
+    created_at: models.DateTimeField = models.DateTimeField(auto_now_add=True)
+    updated_at: models.DateTimeField = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["name"]

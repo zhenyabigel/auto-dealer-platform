@@ -4,7 +4,7 @@ import pytest
 
 from autodealer_backend.suppliers.models import Supplier
 from autodealer_backend.suppliers.serializers import SupplierSerializer
-from autodealer_backend.users.tests.factories import UserFactory
+from autodealer_backend.users.tests.factories.user_factory import UserFactory
 
 
 @pytest.mark.django_db

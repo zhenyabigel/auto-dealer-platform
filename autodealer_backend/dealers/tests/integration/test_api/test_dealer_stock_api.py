@@ -10,7 +10,11 @@ from autodealer_backend.dealers.tests.factories.dealer_stock_factory import (
 from autodealer_backend.suppliers.tests.factories.supplier_factory import (
     SupplierFactory,
 )
-from autodealer_backend.users.tests.factories import UserFactory
+from autodealer_backend.users.tests.factories.admin_user_factory import AdminUserFactory
+from autodealer_backend.users.tests.factories.supplier_user_factory import (
+    SupplierUserFactory,
+)
+from autodealer_backend.users.tests.factories.user_factory import UserFactory
 
 
 @pytest.mark.django_db
@@ -19,17 +23,20 @@ class TestDealerStockAPI:
     @pytest.fixture(autouse=True)
     def setup(self):
         self.client = APIClient()
-        self.admin = UserFactory(is_staff=True, is_superuser=True)
-        self.dealer_user = UserFactory(role="dealer")
+        self.admin = AdminUserFactory()
         self.customer = UserFactory(role="customer")
-        self.supplier_user = UserFactory(role="supplier")
-        self.other_dealer_user = UserFactory(role="dealer")
 
+        # Создаем дилеров - фабрики сами создадут пользователей
+        self.dealer = DealerFactory()
+        self.other_dealer = DealerFactory()
+
+        # Создаем поставщика
+        self.supplier_user = SupplierUserFactory()
         self.supplier = SupplierFactory(user=self.supplier_user)
-        self.dealer = DealerFactory(user=self.dealer_user)
-        self.other_dealer = DealerFactory(user=self.other_dealer_user)
+
         self.car_model = CarModelFactory()
 
+        # Создаем stock для основного дилера
         self.stock = DealerStockFactory(
             dealer=self.dealer,
             car_model=self.car_model,
@@ -70,7 +77,8 @@ class TestDealerStockAPI:
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
     def test_dealer_can_create_stock_for_own_dealership(self):
-        self.client.force_authenticate(user=self.dealer_user)
+        # Используем пользователя основного дилера
+        self.client.force_authenticate(user=self.dealer.user)
         data = {
             "car_model_id": self.car_model.id,
             "supplier_id": self.supplier.id,
@@ -104,7 +112,7 @@ class TestDealerStockAPI:
         assert response.data["dealer"] == self.other_dealer.name
 
     def test_dealer_cannot_create_stock_for_other_dealer(self):
-        self.client.force_authenticate(user=self.dealer_user)
+        self.client.force_authenticate(user=self.dealer.user)
         data = {
             "dealer": self.other_dealer.id,
             "car_model_id": self.car_model.id,
@@ -119,7 +127,7 @@ class TestDealerStockAPI:
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
     def test_create_stock_with_invalid_prices_rejected(self):
-        self.client.force_authenticate(user=self.dealer_user)
+        self.client.force_authenticate(user=self.dealer.user)
         invalid_data = {
             "car_model_id": self.car_model.id,
             "supplier_id": self.supplier.id,
@@ -137,7 +145,7 @@ class TestDealerStockAPI:
         )
 
     def test_invalid_vin_rejected(self):
-        self.client.force_authenticate(user=self.dealer_user)
+        self.client.force_authenticate(user=self.dealer.user)
         data = {
             "car_model_id": self.car_model.id,
             "purchase_price": "20000.00",
@@ -151,7 +159,7 @@ class TestDealerStockAPI:
         assert "vin" in response.data
 
     def test_update_stock_only_by_owner_or_admin(self):
-        self.client.force_authenticate(user=self.dealer_user)
+        self.client.force_authenticate(user=self.dealer.user)
         data = {"color": "Black"}
         response = self.client.patch(
             f"/api/dealer-stock/{self.stock.id}/", data, format="json"
@@ -170,7 +178,7 @@ class TestDealerStockAPI:
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
     def test_other_dealer_cannot_update_stock(self):
-        self.client.force_authenticate(user=self.other_dealer_user)
+        self.client.force_authenticate(user=self.other_dealer.user)
         data = {"color": "StolenColor"}
         response = self.client.patch(
             f"/api/dealer-stock/{self.stock.id}/", data, format="json"
@@ -222,12 +230,17 @@ class TestDealerStockAPI:
         self.client.force_authenticate(user=self.customer)
         response = self.client.get("/api/dealer-stock/?is_sold=False")
 
+        assert response.status_code == status.HTTP_200_OK
+
         results = response.data["results"]
         ids = [item["id"] for item in results]
         assert self.stock.id in ids
         assert sold_stock.id not in ids
 
         response = self.client.get("/api/dealer-stock/?is_sold=True")
+
+        assert response.status_code == status.HTTP_200_OK
+
         results = response.data["results"]
         ids = [item["id"] for item in results]
         assert sold_stock.id in ids

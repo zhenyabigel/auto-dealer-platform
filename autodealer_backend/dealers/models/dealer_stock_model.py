@@ -13,26 +13,32 @@ class DealerStock(models.Model):
         ("demo", "Демо"),
     )
 
-    dealer = models.ForeignKey(
+    dealer: models.ForeignKey = models.ForeignKey(
         Dealer, on_delete=models.CASCADE, related_name="dealer_stock"
     )
-    car_model = models.ForeignKey(
+    car_model: models.ForeignKey = models.ForeignKey(
         CarModel, on_delete=models.CASCADE, related_name="dealer_inventory"
     )
-    supplier = models.ForeignKey(
+    supplier: models.ForeignKey = models.ForeignKey(
         Supplier, on_delete=models.SET_NULL, null=True, blank=True
     )
-    purchase_price = models.DecimalField(max_digits=10, decimal_places=2)
-    selling_price = models.DecimalField(max_digits=10, decimal_places=2)
-    vin = models.CharField(max_length=17, unique=True, blank=True)
-    mileage = models.PositiveIntegerField(default=0)
-    color = models.CharField(max_length=30)
-    condition = models.CharField(max_length=4, choices=CONDITION_CHOICES, default="new")
-    is_sold = models.BooleanField(default=False)
-    arrival_date = models.DateField()
-    is_active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    purchase_price: models.DecimalField = models.DecimalField(
+        max_digits=10, decimal_places=2
+    )
+    selling_price: models.DecimalField = models.DecimalField(
+        max_digits=10, decimal_places=2
+    )
+    vin: models.CharField = models.CharField(max_length=17, unique=True, blank=True)
+    mileage: models.PositiveIntegerField = models.PositiveIntegerField(default=0)
+    color: models.CharField = models.CharField(max_length=30)
+    condition: models.CharField = models.CharField(
+        max_length=4, choices=CONDITION_CHOICES, default="new"
+    )
+    is_sold: models.BooleanField = models.BooleanField(default=False)
+    arrival_date: models.DateField = models.DateField()
+    is_active: models.BooleanField = models.BooleanField(default=True)
+    created_at: models.DateTimeField = models.DateTimeField(auto_now_add=True)
+    updated_at: models.DateTimeField = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["-arrival_date"]

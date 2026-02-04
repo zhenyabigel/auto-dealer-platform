@@ -2,9 +2,9 @@ from decimal import Decimal
 
 import factory
 from faker import Faker
+from users.tests.factories.dealer_user_factory import DealerUserFactory
 
 from autodealer_backend.dealers.models import Dealer
-from autodealer_backend.users.tests.factories.user_factory import DealerUserFactory
 
 fake = Faker("ru_RU")
 
@@ -15,7 +15,7 @@ class DealerFactory(factory.django.DjangoModelFactory):
         skip_postgeneration_save = True
 
     user = factory.SubFactory(DealerUserFactory)
-    name = factory.LazyFunction(lambda: fake.company())
+    name = factory.LazyFunction(lambda: fake.unique.company())
     legal_name = factory.LazyFunction(lambda: fake.company() + " LLC")
     dealer_type = factory.LazyFunction(
         lambda: fake.random_element(["premium", "standard", "discount"])
@@ -26,7 +26,6 @@ class DealerFactory(factory.django.DjangoModelFactory):
     email = factory.LazyFunction(lambda: fake.email())
     website = factory.LazyFunction(lambda: fake.url())
     contact_person = factory.LazyFunction(lambda: fake.name())
-
     balance = factory.LazyFunction(
         lambda: Decimal(
             str(
@@ -35,7 +34,7 @@ class DealerFactory(factory.django.DjangoModelFactory):
                         left_digits=6,
                         right_digits=2,
                         positive=True,
-                        min_value=0.01,
+                        min_value=1000,
                         max_value=100000,
                     ),
                     2,
@@ -43,5 +42,13 @@ class DealerFactory(factory.django.DjangoModelFactory):
             )
         )
     )
-
     is_active = True
+
+    @factory.post_generation
+    def preferred_car_models(self, create, extracted, **kwargs):
+        if not create:
+            return
+
+        if extracted:
+            for car_model in extracted:
+                self.preferred_car_models.add(car_model)

@@ -7,6 +7,11 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5433:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   redis:
     image: redis:7
@@ -47,7 +52,10 @@ services:
       - web
   celery-worker:
     build: .
-    command: celery -A autodealer_backend.celery_app worker --loglevel=info
+    command:
+      celery -A autodealer_backend.celery_app worker 
+      --queues=periodic_tasks,maintenance_tasks,default 
+      --loglevel=info
     volumes:
       - .:/app
     working_dir: /app/autodealer_backend
@@ -55,9 +63,16 @@ services:
       - DJANGO_SETTINGS_MODULE=config.settings
       - PYTHONPATH=/app
       - CELERY_BROKER_URL=redis://redis:6379/0
+      - DB_HOST=db
+      - DB_PORT=5432
+      - POSTGRES_DB=autodealer
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     depends_on:
-      - redis
-      - db
+      redis:
+        condition: service_started
+      db:
+        condition: service_healthy
   celery-beat:
     build: .
     command: celery -A autodealer_backend.celery_app beat --loglevel=info

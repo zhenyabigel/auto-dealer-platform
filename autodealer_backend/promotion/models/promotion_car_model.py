@@ -5,13 +5,13 @@ from autodealer_backend.promotion.models.promotion_model import Promotion
 
 
 class PromotionCar(models.Model):
-    promotion = models.ForeignKey(
+    promotion: models.ForeignKey = models.ForeignKey(
         Promotion, on_delete=models.CASCADE, related_name="promotion_cars"
     )
-    car_model = models.ForeignKey(
+    car_model: models.ForeignKey = models.ForeignKey(
         CarModel, on_delete=models.CASCADE, related_name="car_promotions"
     )
-    special_price = models.DecimalField(
+    special_price: models.DecimalField = models.DecimalField(
         max_digits=10, decimal_places=2, null=True, blank=True
     )
 

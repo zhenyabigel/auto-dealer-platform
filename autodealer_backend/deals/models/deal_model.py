@@ -13,18 +13,18 @@ class Deal(models.Model):
         ("sale", "Продажа клиенту"),
     ]
 
-    deal_type = models.CharField(max_length=10, choices=DEAL_TYPES)
-    offer = models.ForeignKey(
+    deal_type: models.CharField = models.CharField(max_length=10, choices=DEAL_TYPES)
+    offer: models.ForeignKey = models.ForeignKey(
         Offer, on_delete=models.SET_NULL, null=True, blank=True, related_name="deals"
     )
-    dealer_stock = models.ForeignKey(
+    dealer_stock: models.ForeignKey = models.ForeignKey(
         DealerStock,
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
         related_name="sales",
     )
-    customer = models.ForeignKey(
+    customer: models.ForeignKey = models.ForeignKey(
         User,
         on_delete=models.SET_NULL,
         null=True,
@@ -33,7 +33,7 @@ class Deal(models.Model):
         related_name="purchases",
     )
 
-    dealer = models.ForeignKey(
+    dealer: models.ForeignKey = models.ForeignKey(
         User,
         on_delete=models.SET_NULL,
         null=True,
@@ -41,7 +41,7 @@ class Deal(models.Model):
         limit_choices_to={"role": "dealer"},
         related_name="supplier_purchases",
     )
-    supplier_offer = models.ForeignKey(
+    supplier_offer: models.ForeignKey = models.ForeignKey(
         SupplierOffer,
         on_delete=models.SET_NULL,
         null=True,
@@ -49,13 +49,13 @@ class Deal(models.Model):
         related_name="deals",
     )
 
-    price = models.DecimalField(
+    price: models.DecimalField = models.DecimalField(
         max_digits=12, decimal_places=2, validators=[MinValueValidator(0)]
     )
-    quantity = models.PositiveIntegerField(default=1)
-    date = models.DateTimeField(auto_now_add=True)
-    is_completed = models.BooleanField(default=False)
-    notes = models.TextField(blank=True)
+    quantity: models.PositiveIntegerField = models.PositiveIntegerField(default=1)
+    date: models.DateTimeField = models.DateTimeField(auto_now_add=True)
+    is_completed: models.BooleanField = models.BooleanField(default=False)
+    notes: models.TextField = models.TextField(blank=True)
 
     class Meta:
         ordering = ["-date"]

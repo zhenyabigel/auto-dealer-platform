@@ -1,8 +1,8 @@
 import pytest
+from users.tests.factories.customer_user_factory import CustomerUserFactory
 
 from autodealer_backend.deals.tests.factories.deals_factory import DealFactory
 from autodealer_backend.deals.tests.factories.offer_factory import OfferFactory
-from autodealer_backend.users.tests.factories.user_factory import CustomerUserFactory
 
 
 @pytest.mark.django_db

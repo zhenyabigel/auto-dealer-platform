@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from autodealer_backend.cars.models import CarFeature, CarModel  # ← Добавить импорт
+from autodealer_backend.cars.models import CarFeature, CarModel
 
 
 class CarFeatureSerializer(serializers.ModelSerializer):

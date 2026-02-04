@@ -3,13 +3,13 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
+from users.tests.factories.customer_user_factory import CustomerUserFactory
 
 from autodealer_backend.dealers.tests.factories.dealer_factory import DealerFactory
 from autodealer_backend.promotion.models.promotion_model import Promotion
 from autodealer_backend.promotion.tests.factories.promotion_factory import (
     PromotionFactory,
 )
-from autodealer_backend.users.tests.factories.user_factory import CustomerUserFactory
 
 User = get_user_model()
 

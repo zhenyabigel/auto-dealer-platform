@@ -8,7 +8,7 @@ from autodealer_backend.users.serializers import (
     PasswordResetRequestSerializer,
     UserRegistrationSerializer,
 )
-from autodealer_backend.users.tests.factories import UserFactory
+from autodealer_backend.users.tests.factories.user_factory import UserFactory
 
 
 @pytest.mark.django_db

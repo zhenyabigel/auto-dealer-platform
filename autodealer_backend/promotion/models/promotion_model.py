@@ -9,25 +9,27 @@ class Promotion(models.Model):
         ("dealer", "От дилера"),
     ]
 
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    promotion_type = models.CharField(max_length=10, choices=PROMOTION_TYPES)
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField()
-    discount_percent = models.PositiveIntegerField()
-    max_discount_amount = models.DecimalField(
+    name: models.CharField = models.CharField(max_length=100)
+    description: models.TextField = models.TextField()
+    promotion_type: models.CharField = models.CharField(
+        max_length=10, choices=PROMOTION_TYPES
+    )
+    start_date: models.DateTimeField = models.DateTimeField()
+    end_date: models.DateTimeField = models.DateTimeField()
+    discount_percent: models.PositiveIntegerField = models.PositiveIntegerField()
+    max_discount_amount: models.DecimalField = models.DecimalField(
         max_digits=10, decimal_places=2, null=True, blank=True
     )
-    dealer = models.ForeignKey(
+    dealer: models.ForeignKey = models.ForeignKey(
         Dealer,
         on_delete=models.CASCADE,
         null=True,
         blank=True,
         related_name="promotions",
     )
-    is_active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    is_active: models.BooleanField = models.BooleanField(default=True)
+    created_at: models.DateTimeField = models.DateTimeField(auto_now_add=True)
+    updated_at: models.DateTimeField = models.DateTimeField(auto_now=True)
 
     class Meta:
         app_label = "promotion"

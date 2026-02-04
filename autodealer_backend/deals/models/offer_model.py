@@ -14,30 +14,32 @@ class Offer(models.Model):
         ("expired", "Просрочено"),
     ]
 
-    customer = models.ForeignKey(
+    customer: models.ForeignKey = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         limit_choices_to={"role": "customer"},
         related_name="offers",
     )
-    car_model = models.ForeignKey(
+    car_model: models.ForeignKey = models.ForeignKey(
         CarModel, on_delete=models.CASCADE, related_name="offers"
     )
-    max_price = models.DecimalField(
+    max_price: models.DecimalField = models.DecimalField(
         max_digits=12, decimal_places=2, validators=[MinValueValidator(0)]
     )
-    preferred_dealers = models.ManyToManyField(
+    preferred_dealers: models.ManyToManyField = models.ManyToManyField(
         User,
         limit_choices_to={"role": "dealer"},
         blank=True,
         related_name="received_offers",
     )
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="pending")
-    expiry_date = models.DateTimeField(default=timezone.now)
-    notes = models.TextField(blank=True)
-    is_active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    status: models.CharField = models.CharField(
+        max_length=10, choices=STATUS_CHOICES, default="pending"
+    )
+    expiry_date: models.DateTimeField = models.DateTimeField(default=timezone.now)
+    notes: models.TextField = models.TextField(blank=True)
+    is_active: models.BooleanField = models.BooleanField(default=True)
+    created_at: models.DateTimeField = models.DateTimeField(auto_now_add=True)
+    updated_at: models.DateTimeField = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["-created_at"]

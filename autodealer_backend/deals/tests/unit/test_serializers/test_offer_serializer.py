@@ -1,10 +1,8 @@
 import pytest
+from users.tests.factories.customer_user_factory import CustomerUserFactory
 
 from autodealer_backend.cars.tests.factories.car_model_factory import CarModelFactory
 from autodealer_backend.deals.serializers import OfferSerializer
-from autodealer_backend.users.tests.factories.user_factory import (
-    CustomerUserFactory,
-)
 
 
 @pytest.mark.django_db

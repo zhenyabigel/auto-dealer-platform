@@ -2,8 +2,9 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
+from celery_beat import CELERY_BEAT_SCHEDULE
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-from autodealer_backend.celery_beat import CELERY_BEAT_SCHEDULE
 
 SECRET_KEY = "django-insecure-ek1^w-^$gx97)j)j5f8y@m1a@06zbav+d0ts43)s^m1-0f7lfo"
 DEBUG = True
@@ -71,7 +72,7 @@ DATABASES = {
         "NAME": os.environ.get("POSTGRES_DB", "autodealer"),
         "USER": os.environ.get("POSTGRES_USER", "postgres"),
         "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "postgres"),
-        "HOST": os.environ.get("DB_HOST", "localhost"),
+        "HOST": os.environ.get("DB_HOST", "db"),
         "PORT": os.environ.get("DB_PORT", "5432"),
     }
 }
@@ -148,12 +149,13 @@ SWAGGER_USE_COMPAT_RENDERERS = False
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://localhost:6379/1",
+        "LOCATION": "redis://redis:6379/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
     }
 }
+# Celery Configuration
 CELERY_BROKER_URL = "redis://redis:6379/0"
 CELERY_RESULT_BACKEND = "redis://redis:6379/0"
 CELERY_ACCEPT_CONTENT = ["json"]
@@ -162,4 +164,14 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "Europe/Moscow"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
+
 CELERY_BEAT_SCHEDULE = CELERY_BEAT_SCHEDULE
+
+# Task queues
+CELERY_TASK_DEFAULT_QUEUE = "default"
+CELERY_TASK_CREATE_MISSING_QUEUES = True
+CELERY_TASK_ROUTES = {
+    "autodealer_backend.dealers.tasks.*": {"queue": "periodic_tasks"},
+    "autodealer_backend.suppliers.tasks.*": {"queue": "periodic_tasks"},
+    "autodealer_backend.deals.tasks.*": {"queue": "periodic_tasks"},
+}

@@ -44,9 +44,9 @@ class DealerStockFactory(factory.django.DjangoModelFactory):
         lambda o: (o.purchase_price * Decimal("1.2")).quantize(Decimal("0.01"))
     )
 
-    vin = factory.LazyFunction(lambda: fake.lexify(text="?" * 17).upper())
+    vin = factory.LazyFunction(lambda: fake.unique.lexify(text="?" * 17).upper())
     mileage = 0
-    color = "White"
+    color = factory.LazyFunction(lambda: fake.color_name())
     condition = "new"
     is_sold = False
     arrival_date = date.today()

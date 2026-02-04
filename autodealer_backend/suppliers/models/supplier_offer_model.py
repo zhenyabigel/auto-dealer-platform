@@ -7,12 +7,12 @@ from autodealer_backend.suppliers.models import Supplier
 
 
 class SupplierOffer(models.Model):
-    supplier = models.ForeignKey(
+    supplier: models.ForeignKey = models.ForeignKey(
         Supplier,
         on_delete=models.CASCADE,
         related_name="offers",  # ИСПРАВЛЕНО: было 'suppliers', стало 'offers'
     )
-    car_model = models.ForeignKey(
+    car_model: models.ForeignKey = models.ForeignKey(
         CarModel,
         on_delete=models.CASCADE,
         null=True,
@@ -21,47 +21,49 @@ class SupplierOffer(models.Model):
     )
 
     # Гибкие поля для случаев, когда нет CarModel
-    raw_brand = models.CharField(max_length=50, blank=True)
-    raw_model = models.CharField(max_length=50, blank=True)
-    raw_specs = models.JSONField(
+    raw_brand: models.CharField = models.CharField(max_length=50, blank=True)
+    raw_model: models.CharField = models.CharField(max_length=50, blank=True)
+    raw_specs: models.JSONField = models.JSONField(
         default=dict,
         blank=True,
         help_text="Полные характеристики в JSON (если нет CarModel)",
     )
 
     # Условия предложения
-    price = models.DecimalField(
+    price: models.DecimalField = models.DecimalField(
         max_digits=10,
         decimal_places=2,
         validators=[MinValueValidator(0)],
         help_text="Цена за единицу в USD",
     )
-    quantity_available = models.PositiveIntegerField(
+    quantity_available: models.PositiveIntegerField = models.PositiveIntegerField(
         default=1, help_text="Доступное количество"
     )
-    discount_percent = models.PositiveIntegerField(
+    discount_percent: models.PositiveIntegerField = models.PositiveIntegerField(
         default=0,
         validators=[MaxValueValidator(100)],
         help_text="Процент скидки (0-100)",
     )
-    valid_from = models.DateField(default=timezone.now)
-    valid_to = models.DateField(
+    valid_from: models.DateField = models.DateField(default=timezone.now)
+    valid_to: models.DateField = models.DateField(
         default=timezone.now().date() + timezone.timedelta(days=30)
     )
 
     # Логистика
-    delivery_days = models.PositiveIntegerField(
+    delivery_days: models.PositiveIntegerField = models.PositiveIntegerField(
         default=14, validators=[MinValueValidator(1)], help_text="Срок поставки в днях"
     )
-    is_new = models.BooleanField(default=True, help_text="Новый (не б/у)")
-    warranty_months = models.PositiveIntegerField(
+    is_new: models.BooleanField = models.BooleanField(
+        default=True, help_text="Новый (не б/у)"
+    )
+    warranty_months: models.PositiveIntegerField = models.PositiveIntegerField(
         default=24, help_text="Гарантия в месяцах"
     )
 
     # Системные поля
-    is_active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    is_active: models.BooleanField = models.BooleanField(default=True)
+    created_at: models.DateTimeField = models.DateTimeField(auto_now_add=True)
+    updated_at: models.DateTimeField = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["price"]

@@ -14,7 +14,8 @@ class CarFeatureFactory(factory.django.DjangoModelFactory):
         model = CarFeature
         skip_postgeneration_save = True
 
-    car_model = factory.SubFactory(CarModelFactory)  # Убедимся, что CarModel создается
+    # Убедимся, что CarModel создается
+    car_model = factory.SubFactory(CarModelFactory)
     category = factory.LazyFunction(
         lambda: random.choice(
             ["safety", "comfort", "multimedia", "exterior", "interior"]

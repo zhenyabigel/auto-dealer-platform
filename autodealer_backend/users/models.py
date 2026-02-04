@@ -36,15 +36,19 @@ class User(AbstractUser):
         null=False,
         error_messages={"blank": "Email is required", "null": "Email is required"},
     )
-    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default="customer")
-    phone = models.CharField(max_length=20, blank=True)
-    balance = models.DecimalField(
+    role: models.CharField = models.CharField(
+        max_length=10, choices=ROLE_CHOICES, default="customer"
+    )
+    phone: models.CharField = models.CharField(max_length=20, blank=True)
+    balance: models.DecimalField = models.DecimalField(
         max_digits=12, decimal_places=2, default=0, help_text="Баланс в USD"
     )
-    address = models.TextField(blank=True)
-    country = CountryField(blank=True)
-    is_verified = models.BooleanField(default=False)
-    verification_token = models.CharField(max_length=64, blank=True, null=True)
+    address: models.TextField = models.TextField(blank=True)
+    country: CountryField = CountryField(blank=True)
+    is_verified: models.BooleanField = models.BooleanField(default=False)
+    verification_token: models.CharField = models.CharField(
+        max_length=64, blank=True, null=True
+    )
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username"]

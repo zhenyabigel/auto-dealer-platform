@@ -3,6 +3,7 @@ from decimal import Decimal
 import pytest
 from rest_framework import status
 from rest_framework.test import APIClient
+from users.tests.factories.user_factory import UserFactory
 
 from autodealer_backend.cars.tests.factories import CarModelFactory
 from autodealer_backend.dealers.tests.factories.dealer_factory import DealerFactory
@@ -18,7 +19,6 @@ from autodealer_backend.suppliers.tests.factories.supplier_factory import (
 from autodealer_backend.suppliers.tests.factories.supplier_offer_factory import (
     SupplierOfferFactory,
 )
-from autodealer_backend.users.tests.factories import UserFactory
 
 
 @pytest.mark.django_db

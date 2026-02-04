@@ -12,36 +12,42 @@ class Dealer(models.Model):
         ("discount", "Дискаунтер"),
     )
 
-    user = models.OneToOneField(
+    user: models.OneToOneField = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
         related_name="dealer_profile",
         limit_choices_to={"role": "dealer"},
     )
-    name = models.CharField(max_length=100, unique=True)
-    legal_name = models.CharField(blank=True, null=True, max_length=200)
-    dealer_type = models.CharField(
+    name: models.CharField = models.CharField(max_length=100, unique=True)
+    legal_name: models.CharField = models.CharField(
+        blank=True, null=True, max_length=200
+    )
+    dealer_type: models.CharField = models.CharField(
         max_length=20, choices=DEALER_TYPES, default="standard"
     )
-    location = CountryField()
-    address = models.TextField(blank=True, null=True, verbose_name="Адрес")
-    phone = models.CharField(max_length=20)
-    email = models.EmailField(blank=True, null=True, verbose_name="Почта")
+    location: CountryField = CountryField()
+    address: models.TextField = models.TextField(
+        blank=True, null=True, verbose_name="Адрес"
+    )
+    phone: models.CharField = models.CharField(max_length=20)
+    email: models.EmailField = models.EmailField(
+        blank=True, null=True, verbose_name="Почта"
+    )
     website = models.URLField(blank=True)
-    contact_person = models.CharField(
+    contact_person: models.CharField = models.CharField(
         blank=True, null=True, verbose_name="Контактное лицо", max_length=100
     )
-    balance = models.DecimalField(
+    balance: models.DecimalField = models.DecimalField(
         max_digits=12,
         decimal_places=2,
         default=0,
         validators=[MinValueValidator(0)],
         help_text="Баланс в USD",
     )
-    is_active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    preferred_car_models = models.ManyToManyField(
+    is_active: models.BooleanField = models.BooleanField(default=True)
+    created_at: models.DateTimeField = models.DateTimeField(auto_now_add=True)
+    updated_at: models.DateTimeField = models.DateTimeField(auto_now=True)
+    preferred_car_models: models.ManyToManyField = models.ManyToManyField(
         "cars.CarModel",
         blank=True,
         related_name="preferred_by_dealers",

@@ -1,11 +1,10 @@
 from rest_framework import serializers
 
 from autodealer_backend.cars.models import CarModel
-from autodealer_backend.cars.serializers import CarFeatureSerializer
 
 
 class CarModelSerializer(serializers.ModelSerializer):
-    features = CarFeatureSerializer(many=True, read_only=True)
+    features = serializers.SerializerMethodField()
     body_types = serializers.ListField(
         child=serializers.CharField(),
         required=False,
@@ -43,6 +42,16 @@ class CarModelSerializer(serializers.ModelSerializer):
             "updated_at",
         ]
         read_only_fields = ["created_at", "updated_at"]
+
+    def get_features(self, obj):
+        """Ленивая загрузка features через SerializerMethodField"""
+        from autodealer_backend.cars.serializers.car_feature_serializer import (
+            CarFeatureSerializer,
+        )
+
+        # Используем related_name="features" из модели CarFeature
+        features = obj.features.all()
+        return CarFeatureSerializer(features, many=True).data
 
     def validate_production_start(self, value):
         if value < 1900 or value > 2100:

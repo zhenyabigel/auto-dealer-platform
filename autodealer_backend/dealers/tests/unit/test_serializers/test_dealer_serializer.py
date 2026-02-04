@@ -1,7 +1,7 @@
 from decimal import Decimal
 
 import pytest
-from users.tests.factories import DealerUserFactory
+from users.tests.factories.dealer_user_factory import DealerUserFactory
 
 from autodealer_backend.dealers.models import Dealer
 from autodealer_backend.dealers.serializers import DealerSerializer

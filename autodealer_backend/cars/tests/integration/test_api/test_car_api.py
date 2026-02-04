@@ -1,9 +1,10 @@
 import pytest
 from rest_framework import status
 from rest_framework.test import APIClient
+from users.tests.factories.admin_user_factory import AdminUserFactory
+from users.tests.factories.user_factory import UserFactory
 
 from autodealer_backend.cars.tests.factories import CarFeatureFactory, CarModelFactory
-from autodealer_backend.users.tests.factories import AdminUserFactory, UserFactory
 
 
 @pytest.mark.django_db

@@ -14,4 +14,24 @@ repos:
     rev: v2.3.1
     hooks:
       - id: autoflake
-        args: ["--in-place", "--remove-all-unused-imports"]
+        args:
+          - "--in-place"
+          - "--remove-all-unused-imports"
+          - "--remove-unused-variables"
+
+#  - repo: https://github.com/PyCQA/flake8
+#    rev: 7.1.1
+#    hooks:
+#      - id: flake8
+
+#  - repo: https://github.com/PyCQA/pylint
+#    rev: v3.3.1
+#    hooks:
+#      - id: pylint
+#        exclude: |
+#            (?x)^(
+#                .*migrations/.*|
+#                .*tests/.*|
+#                .*__pycache__/.*
+#            )$
+

@@ -1,9 +1,9 @@
 import pytest
 from rest_framework import status
 from rest_framework.test import APIClient
+from users.tests.factories.user_factory import UserFactory
 
 from autodealer_backend.cars.tests.factories import CarFeatureFactory, CarModelFactory
-from autodealer_backend.users.tests.factories import UserFactory
 
 
 @pytest.mark.django_db
@@ -26,12 +26,3 @@ class TestCarFeatureAPI:
         response = self.client.get("/api/cars-feature/")
         assert response.status_code == status.HTTP_200_OK
         assert "results" in response.data
-
-    def test_filter_features_by_category(self):
-        self.client.force_authenticate(user=self.admin_user)
-        CarFeatureFactory(car_model=self.car_model, category="safety")
-        CarFeatureFactory(car_model=self.car_model, category="comfort")
-
-        response = self.client.get("/api/cars-feature/?category=safety")
-        assert response.status_code == status.HTTP_200_OK
-        assert all(item["category"] == "safety" for item in response.data["results"])

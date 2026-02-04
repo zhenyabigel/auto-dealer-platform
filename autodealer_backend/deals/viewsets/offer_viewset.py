@@ -66,6 +66,6 @@ class OfferViewSet(
 
     @action(detail=True, methods=["post"])
     def accept(self, request, pk=None):
-        offer = self.get_object()
+        self.get_object()
         # TODO логика принятия сделки
         return Response({"status": "offer accepted"})

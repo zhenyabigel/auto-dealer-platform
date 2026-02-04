@@ -1,8 +1,8 @@
 import factory
 from faker import Faker
+from users.tests.factories.supplier_user_factory import SupplierUserFactory
 
 from autodealer_backend.suppliers.models import Supplier
-from autodealer_backend.users.tests.factories.user_factory import SupplierUserFactory
 
 fake = Faker("ru_RU")
 

@@ -1,4 +1,5 @@
 import random
+import uuid
 
 import factory
 from faker import Faker
@@ -39,9 +40,12 @@ class CarModelFactory(factory.django.DjangoModelFactory):
             "Volkswagen": random.choice(["Jetta", "Bora", "T4", "Passat"]),
         }[o.brand]
     )
+
+    # ИСПРАВЛЕНО: Делаем generation уникальным добавляя случайный идентификатор
     generation = factory.LazyFunction(
-        lambda: random.choice(["", "Mk1", "Mk2", "Mk3", "2022", "2023", "2025"])
+        lambda: f"{random.choice(['', 'Mk1', 'Mk2', 'Mk3', '2022', '2023', '2025'])}-{uuid.uuid4().hex[:8]}"
     )
+
     production_start = factory.LazyFunction(lambda: fake.random_int(min=2015, max=2023))
     production_end = factory.LazyFunction(
         lambda: (

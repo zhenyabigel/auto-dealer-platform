@@ -382,7 +382,8 @@ class Command(BaseCommand):
                 supplier_offer = random.choice(supplier_offers)
                 Deal.objects.create(
                     deal_type="purchase",
-                    dealer=random.choice(dealers),  # Теперь это User с ролью dealer
+                    # Теперь это User с ролью dealer
+                    dealer=random.choice(dealers),
                     supplier_offer=supplier_offer,
                     price=supplier_offer.price,
                     quantity=random.randint(1, 5),

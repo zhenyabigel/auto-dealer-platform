@@ -1,12 +1,13 @@
-from datetime import date, timedelta
+from datetime import timedelta
 from decimal import Decimal
 
 import factory
+from django.utils import timezone
 from faker import Faker
+from users.tests.factories.customer_user_factory import CustomerUserFactory
 
 from autodealer_backend.cars.tests.factories.car_model_factory import CarModelFactory
 from autodealer_backend.deals.models.offer_model import Offer
-from autodealer_backend.users.tests.factories.user_factory import CustomerUserFactory
 
 fake = Faker()
 
@@ -24,5 +25,7 @@ class OfferFactory(factory.django.DjangoModelFactory):
         )
     )
     status = "pending"
-    expiry_date = factory.LazyFunction(lambda: date.today() + timedelta(days=7))
+    expiry_date = factory.LazyFunction(
+        lambda: timezone.now() + timedelta(days=7)
+    )  # ИСПРАВЛЕНО: timezone.now()
     is_active = True

@@ -5,7 +5,7 @@ from rest_framework.test import APIClient
 from autodealer_backend.suppliers.tests.factories.supplier_factory import (
     SupplierFactory,
 )
-from autodealer_backend.users.tests.factories import UserFactory
+from autodealer_backend.users.tests.factories.user_factory import UserFactory
 
 
 @pytest.mark.django_db
