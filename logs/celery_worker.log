@@ -1,0 +1,451 @@
+[2025-12-22 13:45:14,574: INFO/MainProcess] Connected to redis://redis:6379/0
+[2025-12-22 13:45:14,580: INFO/MainProcess] mingle: searching for neighbors
+[2025-12-22 13:45:15,591: INFO/MainProcess] mingle: all alone
+[2025-12-22 13:45:15,618: INFO/MainProcess] celery@a979e06ccce0 ready.
+[2025-12-22 13:45:24,320: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[e78db3e5-bf10-4764-8553-80a34d68cf6a] received
+[2025-12-22 13:45:24,322: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[7a7edb10-b3b6-4038-8a26-bef6d03ff7d7] received
+[2025-12-22 13:45:24,348: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:45:24,348: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:45:24,354: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[7a7edb10-b3b6-4038-8a26-bef6d03ff7d7] succeeded in 0.02924559600023713s: None
+[2025-12-22 13:45:24,359: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[e78db3e5-bf10-4764-8553-80a34d68cf6a] succeeded in 0.03725580600030298s: None
+[2025-12-22 13:45:34,315: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[b4c3390d-1dbb-44af-be25-fa4e0bfeba4f] received
+[2025-12-22 13:45:34,322: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:45:34,322: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[a2b46090-8607-42bd-9fee-93dcce216a53] received
+[2025-12-22 13:45:34,328: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:45:34,329: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[b4c3390d-1dbb-44af-be25-fa4e0bfeba4f] succeeded in 0.012343949999831239s: None
+[2025-12-22 13:45:34,333: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[a2b46090-8607-42bd-9fee-93dcce216a53] succeeded in 0.008035200999984227s: None
+[2025-12-22 13:45:44,311: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[9c06f5d6-a5b6-4839-8bc1-d4a8e33ea9c4] received
+[2025-12-22 13:45:44,317: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:45:44,321: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[9c06f5d6-a5b6-4839-8bc1-d4a8e33ea9c4] succeeded in 0.008654352000121435s: None
+[2025-12-22 13:45:44,322: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[192070b5-9a0d-4849-9121-8d938e727384] received
+[2025-12-22 13:45:44,327: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:45:44,331: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[192070b5-9a0d-4849-9121-8d938e727384] succeeded in 0.007540564999999333s: None
+[2025-12-22 13:45:54,316: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[7f3e70a0-4777-46c4-b12e-f76da5afcf10] received
+[2025-12-22 13:45:54,324: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[dc4f719a-0f79-4297-aa96-3530798f0666] received
+[2025-12-22 13:45:54,325: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:45:54,333: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:45:54,336: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[7f3e70a0-4777-46c4-b12e-f76da5afcf10] succeeded in 0.01583664800000406s: None
+[2025-12-22 13:45:54,341: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[dc4f719a-0f79-4297-aa96-3530798f0666] succeeded in 0.012538098000277387s: None
+[2025-12-22 13:46:04,313: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[2979624d-494b-4358-9c6e-ee7ed9d8423f] received
+[2025-12-22 13:46:04,319: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:46:04,322: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[96052d88-fd78-4f9a-9816-13f5a90cacf9] received
+[2025-12-22 13:46:04,325: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[2979624d-494b-4358-9c6e-ee7ed9d8423f] succeeded in 0.00965117099985946s: None
+[2025-12-22 13:46:04,327: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:46:04,331: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[96052d88-fd78-4f9a-9816-13f5a90cacf9] succeeded in 0.0072850870001275325s: None
+[2025-12-22 13:46:14,313: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[b1735cd9-9ff3-4f0b-b084-1f13bd8efb3c] received
+[2025-12-22 13:46:14,318: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:46:14,322: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[d7f4b7d6-20ca-4b72-8582-630e76753096] received
+[2025-12-22 13:46:14,322: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[b1735cd9-9ff3-4f0b-b084-1f13bd8efb3c] succeeded in 0.007823623000149382s: None
+[2025-12-22 13:46:14,326: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:46:14,329: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[d7f4b7d6-20ca-4b72-8582-630e76753096] succeeded in 0.005755101999966428s: None
+[2025-12-22 13:46:24,312: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[76d474dd-0523-4699-862e-771e501b480a] received
+[2025-12-22 13:46:24,316: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:46:24,320: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[76d474dd-0523-4699-862e-771e501b480a] succeeded in 0.006949809000161622s: None
+[2025-12-22 13:46:24,321: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c66e4175-016f-4205-a776-e2b6979a63e5] received
+[2025-12-22 13:46:24,325: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:46:24,328: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c66e4175-016f-4205-a776-e2b6979a63e5] succeeded in 0.004897263000202656s: None
+[2025-12-22 13:46:34,313: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[4e161fa5-16a9-47b1-b05f-f6e15d931583] received
+[2025-12-22 13:46:34,317: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:46:34,321: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[55eae128-76d2-467e-9b38-23316aa2838f] received
+[2025-12-22 13:46:34,322: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[4e161fa5-16a9-47b1-b05f-f6e15d931583] succeeded in 0.007722203999946942s: None
+[2025-12-22 13:46:34,326: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:46:34,329: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[55eae128-76d2-467e-9b38-23316aa2838f] succeeded in 0.0059212410001237s: None
+[2025-12-22 13:46:44,313: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[b64a6e02-e807-4b79-afc0-088a3c905534] received
+[2025-12-22 13:46:44,317: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:46:44,322: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[a406980f-4f25-4185-9c4c-11f47acb2983] received
+[2025-12-22 13:46:44,323: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[b64a6e02-e807-4b79-afc0-088a3c905534] succeeded in 0.007932368999718165s: None
+[2025-12-22 13:46:44,326: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:46:44,328: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[a406980f-4f25-4185-9c4c-11f47acb2983] succeeded in 0.004606892000083462s: None
+[2025-12-22 13:46:54,314: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[805b0f5b-fdea-47dd-8b12-d5500d7a62a5] received
+[2025-12-22 13:46:54,319: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:46:54,322: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[fa384875-756b-4f1c-9fde-5fb711f1643e] received
+[2025-12-22 13:46:54,325: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[805b0f5b-fdea-47dd-8b12-d5500d7a62a5] succeeded in 0.009171717999834073s: None
+[2025-12-22 13:46:54,327: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:46:54,331: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[fa384875-756b-4f1c-9fde-5fb711f1643e] succeeded in 0.006503875000362314s: None
+[2025-12-22 13:47:04,314: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[c84fa536-f455-43b9-9d7f-86bc9997f1d2] received
+[2025-12-22 13:47:04,319: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:47:04,321: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f3e36bab-3d7b-46fc-b3a0-b7811c20377e] received
+[2025-12-22 13:47:04,323: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[c84fa536-f455-43b9-9d7f-86bc9997f1d2] succeeded in 0.007187424999756331s: None
+[2025-12-22 13:47:04,325: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:47:04,328: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f3e36bab-3d7b-46fc-b3a0-b7811c20377e] succeeded in 0.005240816999958042s: None
+[2025-12-22 13:47:14,317: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[7e7c6ae3-961e-4664-b974-0325af4f138d] received
+[2025-12-22 13:47:14,335: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ca1b2932-1108-4608-af7b-c6ff9fd8f9d2] received
+[2025-12-22 13:47:14,337: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:47:14,354: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:47:14,360: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[7e7c6ae3-961e-4664-b974-0325af4f138d] succeeded in 0.029434300000048097s: None
+[2025-12-22 13:47:14,368: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ca1b2932-1108-4608-af7b-c6ff9fd8f9d2] succeeded in 0.01871910099998786s: None
+[2025-12-22 13:47:24,314: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[f90fc78b-b171-454e-8521-3129328ff75a] received
+[2025-12-22 13:47:24,319: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:47:24,322: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ed6694da-f1b6-4f0f-88b4-c763cb141c9d] received
+[2025-12-22 13:47:24,323: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[f90fc78b-b171-454e-8521-3129328ff75a] succeeded in 0.006874710999909439s: None
+[2025-12-22 13:47:24,325: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:47:24,328: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ed6694da-f1b6-4f0f-88b4-c763cb141c9d] succeeded in 0.004838527999709186s: None
+[2025-12-22 13:47:34,313: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[7a509d6d-e0bb-4dda-a35c-e29f270eee46] received
+[2025-12-22 13:47:34,317: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:47:34,321: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[7a509d6d-e0bb-4dda-a35c-e29f270eee46] succeeded in 0.00630856500038135s: None
+[2025-12-22 13:47:34,321: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[1dbdf9a0-9e3d-4df6-9304-223fc86ec740] received
+[2025-12-22 13:47:34,325: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:47:34,328: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[1dbdf9a0-9e3d-4df6-9304-223fc86ec740] succeeded in 0.005133410000325966s: None
+[2025-12-22 13:47:38,235: INFO/MainProcess] Events of group {task} enabled by remote.
+[2025-12-22 13:48:15,131: INFO/MainProcess] Connected to redis://redis:6379/0
+[2025-12-22 13:48:15,136: INFO/MainProcess] mingle: searching for neighbors
+[2025-12-22 13:48:16,148: INFO/MainProcess] mingle: all alone
+[2025-12-22 13:48:16,166: INFO/MainProcess] celery@030c5a6e21b0 ready.
+[2025-12-22 13:48:24,847: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[64ae9e41-17f3-4ff5-9a39-d5b9e2e392c3] received
+[2025-12-22 13:48:24,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[0a97919f-a1c0-466a-a5cc-450f8e6370cf] received
+[2025-12-22 13:48:24,880: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:48:24,880: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:48:24,886: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[0a97919f-a1c0-466a-a5cc-450f8e6370cf] succeeded in 0.0329626239999925s: None
+[2025-12-22 13:48:24,892: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[64ae9e41-17f3-4ff5-9a39-d5b9e2e392c3] succeeded in 0.04205543599982775s: None
+[2025-12-22 13:48:34,835: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[1d247f68-3f90-44ae-a127-dc59d90e1202] received
+[2025-12-22 13:48:34,840: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:48:34,844: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[1d247f68-3f90-44ae-a127-dc59d90e1202] succeeded in 0.007269805999840173s: None
+[2025-12-22 13:48:34,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[3509a0a4-4902-4a65-904f-33a5de0513b9] received
+[2025-12-22 13:48:34,855: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:48:34,860: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[3509a0a4-4902-4a65-904f-33a5de0513b9] succeeded in 0.009028476999901613s: None
+[2025-12-22 13:48:44,836: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[d359f15e-0ed8-421a-9171-2d5f015ed5d7] received
+[2025-12-22 13:48:44,843: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:48:44,850: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[d359f15e-0ed8-421a-9171-2d5f015ed5d7] succeeded in 0.011187879999852157s: None
+[2025-12-22 13:48:44,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[41bbea0c-58fb-473f-9010-0def8a02a421] received
+[2025-12-22 13:48:44,855: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:48:44,858: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[41bbea0c-58fb-473f-9010-0def8a02a421] succeeded in 0.005828701999689656s: None
+[2025-12-22 13:48:54,835: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[73fca56b-3827-4d04-a563-fe51959fbc40] received
+[2025-12-22 13:48:54,840: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:48:54,843: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[73fca56b-3827-4d04-a563-fe51959fbc40] succeeded in 0.0064204340001197124s: None
+[2025-12-22 13:48:54,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[721d35eb-d523-4fc9-9ce3-6d11c89786bf] received
+[2025-12-22 13:48:54,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:48:54,854: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[721d35eb-d523-4fc9-9ce3-6d11c89786bf] succeeded in 0.004500067000208219s: None
+[2025-12-22 13:49:04,836: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[90dba51c-5027-466b-967d-20f21fcf1883] received
+[2025-12-22 13:49:04,840: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:49:04,844: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[90dba51c-5027-466b-967d-20f21fcf1883] succeeded in 0.006451682999795594s: None
+[2025-12-22 13:49:04,848: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ba19bc6e-d194-483c-be6c-1df46ddeefb0] received
+[2025-12-22 13:49:04,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:49:04,854: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ba19bc6e-d194-483c-be6c-1df46ddeefb0] succeeded in 0.004718098000012105s: None
+[2025-12-22 13:49:14,836: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[3f5a35bd-f778-4758-898d-774f277afcea] received
+[2025-12-22 13:49:14,841: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:49:14,845: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[3f5a35bd-f778-4758-898d-774f277afcea] succeeded in 0.0069963619998816284s: None
+[2025-12-22 13:49:14,848: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[63ca2d4d-d14e-4a51-aace-1d1111c9469a] received
+[2025-12-22 13:49:14,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:49:14,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[63ca2d4d-d14e-4a51-aace-1d1111c9469a] succeeded in 0.005081215999780397s: None
+[2025-12-22 13:49:24,836: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[83e19060-712b-4856-9b60-abcac192da97] received
+[2025-12-22 13:49:24,841: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:49:24,845: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[83e19060-712b-4856-9b60-abcac192da97] succeeded in 0.007161318999806099s: None
+[2025-12-22 13:49:24,848: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[3b140ae8-8846-4355-8278-c1e8ce79e220] received
+[2025-12-22 13:49:24,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:49:24,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[3b140ae8-8846-4355-8278-c1e8ce79e220] succeeded in 0.005339124999863998s: None
+[2025-12-22 13:49:34,837: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[69d90343-082a-46fd-a8c8-1347ba66465f] received
+[2025-12-22 13:49:34,842: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:49:34,846: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[69d90343-082a-46fd-a8c8-1347ba66465f] succeeded in 0.007191843999862613s: None
+[2025-12-22 13:49:34,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[a1b11e99-00ae-4dd7-858d-d0796fa4c10a] received
+[2025-12-22 13:49:34,853: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:49:34,856: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[a1b11e99-00ae-4dd7-858d-d0796fa4c10a] succeeded in 0.005259835999822826s: None
+[2025-12-22 13:49:44,837: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[e488fb4b-e3c2-489f-a920-eef287b3ac96] received
+[2025-12-22 13:49:44,842: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:49:44,846: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[e488fb4b-e3c2-489f-a920-eef287b3ac96] succeeded in 0.007080238000071404s: None
+[2025-12-22 13:49:44,848: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[5e2e4564-7f9e-43b5-a689-8e0b6659e135] received
+[2025-12-22 13:49:44,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:49:44,854: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[5e2e4564-7f9e-43b5-a689-8e0b6659e135] succeeded in 0.004789662999883149s: None
+[2025-12-22 13:49:54,837: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[0bcb53ad-34c0-45eb-8e7a-0ce6a7afbd60] received
+[2025-12-22 13:49:54,843: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:49:54,847: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[0bcb53ad-34c0-45eb-8e7a-0ce6a7afbd60] succeeded in 0.007533947999945667s: None
+[2025-12-22 13:49:54,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[1991225f-6cab-416c-90c4-dac06fdf6f6c] received
+[2025-12-22 13:49:54,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:49:54,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[1991225f-6cab-416c-90c4-dac06fdf6f6c] succeeded in 0.004870847999882244s: None
+[2025-12-22 13:50:04,837: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[d2d7447d-bb59-48f0-b0bb-f46820862937] received
+[2025-12-22 13:50:04,841: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:50:04,845: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[d2d7447d-bb59-48f0-b0bb-f46820862937] succeeded in 0.006335697999929835s: None
+[2025-12-22 13:50:04,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[52205a74-339b-4f2f-937f-5d1133149b42] received
+[2025-12-22 13:50:04,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:50:04,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[52205a74-339b-4f2f-937f-5d1133149b42] succeeded in 0.0048146999997698s: None
+[2025-12-22 13:50:14,837: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[b57d9cd4-a1d1-4069-8be7-1d9f564352e2] received
+[2025-12-22 13:50:14,842: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:50:14,847: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[b57d9cd4-a1d1-4069-8be7-1d9f564352e2] succeeded in 0.007706263000272884s: None
+[2025-12-22 13:50:14,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[97773c54-374a-435c-acd6-456aa57f6e9a] received
+[2025-12-22 13:50:14,853: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:50:14,856: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[97773c54-374a-435c-acd6-456aa57f6e9a] succeeded in 0.005352821000087715s: None
+[2025-12-22 13:50:24,838: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[b485384f-45e7-4ac5-aff5-56e7fdac6138] received
+[2025-12-22 13:50:24,842: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:50:24,846: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[b485384f-45e7-4ac5-aff5-56e7fdac6138] succeeded in 0.006764771000234759s: None
+[2025-12-22 13:50:24,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ced4884c-efe2-46b3-a97d-fa455cd50f7e] received
+[2025-12-22 13:50:24,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:50:24,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ced4884c-efe2-46b3-a97d-fa455cd50f7e] succeeded in 0.004565511999771843s: None
+[2025-12-22 13:50:34,838: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[d12d5699-a4c4-4dac-8f0e-d4a60dc67c5b] received
+[2025-12-22 13:50:34,842: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:50:34,846: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[d12d5699-a4c4-4dac-8f0e-d4a60dc67c5b] succeeded in 0.006688510000003589s: None
+[2025-12-22 13:50:34,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f726a6d6-c133-4ccc-8d99-aac6f7e5c08f] received
+[2025-12-22 13:50:34,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:50:34,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f726a6d6-c133-4ccc-8d99-aac6f7e5c08f] succeeded in 0.005106575000354496s: None
+[2025-12-22 13:50:44,838: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[da87ac62-1158-4b85-b19d-12a79d044342] received
+[2025-12-22 13:50:44,843: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:50:44,847: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[da87ac62-1158-4b85-b19d-12a79d044342] succeeded in 0.007801333000315935s: None
+[2025-12-22 13:50:44,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c5fb1322-fb00-4897-a30f-cafcaf3fceb4] received
+[2025-12-22 13:50:44,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:50:44,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c5fb1322-fb00-4897-a30f-cafcaf3fceb4] succeeded in 0.004629635999663151s: None
+[2025-12-22 13:50:54,838: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[e0526fed-66b1-4a5d-b4da-d3363bd0c48d] received
+[2025-12-22 13:50:54,842: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:50:54,847: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[e0526fed-66b1-4a5d-b4da-d3363bd0c48d] succeeded in 0.006752069999947707s: None
+[2025-12-22 13:50:54,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[8dfe9d63-5e54-425f-bcf4-5313ef319202] received
+[2025-12-22 13:50:54,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:50:54,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[8dfe9d63-5e54-425f-bcf4-5313ef319202] succeeded in 0.004628237999895646s: None
+[2025-12-22 13:51:04,838: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[b1006a69-f581-40dc-a9aa-a5f67ae5138e] received
+[2025-12-22 13:51:04,842: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:51:04,846: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[b1006a69-f581-40dc-a9aa-a5f67ae5138e] succeeded in 0.006872276999729365s: None
+[2025-12-22 13:51:04,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[a1863f0e-0910-4bdb-b06c-79dcdc3ce73d] received
+[2025-12-22 13:51:04,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:51:04,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[a1863f0e-0910-4bdb-b06c-79dcdc3ce73d] succeeded in 0.005215869000039675s: None
+[2025-12-22 13:51:14,840: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[e1c0ea0b-2f1e-44a1-af05-0c2662c90dc2] received
+[2025-12-22 13:51:14,848: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:51:14,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[b8bf5c49-6086-4e9d-b53f-8557a62aa9bf] received
+[2025-12-22 13:51:14,854: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[e1c0ea0b-2f1e-44a1-af05-0c2662c90dc2] succeeded in 0.010835893000148644s: None
+[2025-12-22 13:51:14,855: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:51:14,860: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[b8bf5c49-6086-4e9d-b53f-8557a62aa9bf] succeeded in 0.007151528000122198s: None
+[2025-12-22 13:51:24,839: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[c8e3a4e8-2f03-43e9-bd68-c5b02b46f2f6] received
+[2025-12-22 13:51:24,844: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:51:24,848: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[c8e3a4e8-2f03-43e9-bd68-c5b02b46f2f6] succeeded in 0.007455900999957521s: None
+[2025-12-22 13:51:24,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[bed87ef4-b4b5-473a-bf80-8ddd88bce226] received
+[2025-12-22 13:51:24,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:51:24,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[bed87ef4-b4b5-473a-bf80-8ddd88bce226] succeeded in 0.004658645000290562s: None
+[2025-12-22 13:51:34,839: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[1c1d0de8-201d-4caa-9de2-c38ea203ff97] received
+[2025-12-22 13:51:34,844: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:51:34,848: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[1c1d0de8-201d-4caa-9de2-c38ea203ff97] succeeded in 0.006644944000072428s: None
+[2025-12-22 13:51:34,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[0dd86cb3-c2bb-4687-aefc-d58daaffc33c] received
+[2025-12-22 13:51:34,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:51:34,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[0dd86cb3-c2bb-4687-aefc-d58daaffc33c] succeeded in 0.004943767999975535s: None
+[2025-12-22 13:51:44,839: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[1393aed0-8c49-4de9-ae2d-a754495d9410] received
+[2025-12-22 13:51:44,844: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:51:44,849: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[1393aed0-8c49-4de9-ae2d-a754495d9410] succeeded in 0.007763623999835545s: None
+[2025-12-22 13:51:44,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[656105ba-d674-4a5d-865b-c9db9e5822c4] received
+[2025-12-22 13:51:44,853: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:51:44,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[656105ba-d674-4a5d-865b-c9db9e5822c4] succeeded in 0.0043322929996065795s: None
+[2025-12-22 13:51:54,839: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[21882caf-7e46-4508-a9c4-0dba640172f9] received
+[2025-12-22 13:51:54,844: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:51:54,848: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[21882caf-7e46-4508-a9c4-0dba640172f9] succeeded in 0.0068141840001771925s: None
+[2025-12-22 13:51:54,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[8bce4f59-4275-4b9f-baab-b2b6a5e68118] received
+[2025-12-22 13:51:54,853: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:51:54,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[8bce4f59-4275-4b9f-baab-b2b6a5e68118] succeeded in 0.004670461999921827s: None
+[2025-12-22 13:52:04,839: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[e718c1db-3b2d-489c-b7ba-02b96f550cbe] received
+[2025-12-22 13:52:04,843: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:52:04,847: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[e718c1db-3b2d-489c-b7ba-02b96f550cbe] succeeded in 0.006253392999951757s: None
+[2025-12-22 13:52:04,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[0dbb35f6-a6d5-45af-ac11-5c8b700f305c] received
+[2025-12-22 13:52:04,853: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:52:04,856: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[0dbb35f6-a6d5-45af-ac11-5c8b700f305c] succeeded in 0.0061320560002968705s: None
+[2025-12-22 13:52:14,839: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[68402e59-abdc-45ef-b978-eac495416ee8] received
+[2025-12-22 13:52:14,843: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:52:14,847: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[68402e59-abdc-45ef-b978-eac495416ee8] succeeded in 0.006584206000297854s: None
+[2025-12-22 13:52:14,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[8ee890af-3768-4989-89cf-04b65d358791] received
+[2025-12-22 13:52:14,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:52:14,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[8ee890af-3768-4989-89cf-04b65d358791] succeeded in 0.004119897000236961s: None
+[2025-12-22 13:52:24,839: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[07ba77d9-9ae7-489d-a3a6-9f9cf6072626] received
+[2025-12-22 13:52:24,843: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:52:24,847: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[07ba77d9-9ae7-489d-a3a6-9f9cf6072626] succeeded in 0.0067014739997830475s: None
+[2025-12-22 13:52:24,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[8f503c93-ccc7-4260-9440-1c6c4be90291] received
+[2025-12-22 13:52:24,852: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:52:24,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[8f503c93-ccc7-4260-9440-1c6c4be90291] succeeded in 0.0048749359998510045s: None
+[2025-12-22 13:52:34,841: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[5a03da54-5297-46b6-8f81-a3ab72870e18] received
+[2025-12-22 13:52:34,845: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:52:34,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[8bffe56c-7dc9-422e-83d1-eaded4c1218d] received
+[2025-12-22 13:52:34,851: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[5a03da54-5297-46b6-8f81-a3ab72870e18] succeeded in 0.007908098999905633s: None
+[2025-12-22 13:52:34,854: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:52:34,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[8bffe56c-7dc9-422e-83d1-eaded4c1218d] succeeded in 0.004554343000108929s: None
+[2025-12-22 13:52:44,840: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[373c0d71-6fa9-4bc3-a7f5-a898d81f94e2] received
+[2025-12-22 13:52:44,846: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:52:44,851: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[a3a93331-1c06-48e0-9217-0d49917ea66a] received
+[2025-12-22 13:52:44,852: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[373c0d71-6fa9-4bc3-a7f5-a898d81f94e2] succeeded in 0.010326299000098516s: None
+[2025-12-22 13:52:44,855: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:52:44,860: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[a3a93331-1c06-48e0-9217-0d49917ea66a] succeeded in 0.007537779000358569s: None
+[2025-12-22 13:52:54,839: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[09e826e2-922c-4151-a95b-cc5c2f9cfcff] received
+[2025-12-22 13:52:54,845: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:52:54,850: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[09e826e2-922c-4151-a95b-cc5c2f9cfcff] succeeded in 0.009100882999973692s: None
+[2025-12-22 13:52:54,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[2d00bd04-49d8-4f49-adfa-78c06bc50f51] received
+[2025-12-22 13:52:54,854: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:52:54,857: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[2d00bd04-49d8-4f49-adfa-78c06bc50f51] succeeded in 0.0056428129996675125s: None
+[2025-12-22 13:53:04,840: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[45c47b3e-1a1d-4da1-b129-4d10ec8577ef] received
+[2025-12-22 13:53:04,844: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:53:04,848: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[45c47b3e-1a1d-4da1-b129-4d10ec8577ef] succeeded in 0.006254807000004803s: None
+[2025-12-22 13:53:04,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[2a9bd951-ff94-453f-a045-da0b2fdb2d17] received
+[2025-12-22 13:53:04,853: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:53:04,856: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[2a9bd951-ff94-453f-a045-da0b2fdb2d17] succeeded in 0.005275500000152533s: None
+[2025-12-22 13:53:14,841: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[46f94c92-8745-47f5-80db-38d8ed181434] received
+[2025-12-22 13:53:14,845: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:53:14,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[0049aee2-5a21-4fec-bcd2-b0d41d121e72] received
+[2025-12-22 13:53:14,850: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[46f94c92-8745-47f5-80db-38d8ed181434] succeeded in 0.00778359800006001s: None
+[2025-12-22 13:53:14,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:53:14,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[0049aee2-5a21-4fec-bcd2-b0d41d121e72] succeeded in 0.004849537000154669s: None
+[2025-12-22 13:53:24,840: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[7a9683ce-1dbe-43fb-bb33-7431f83afc70] received
+[2025-12-22 13:53:24,844: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:53:24,849: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[7a9683ce-1dbe-43fb-bb33-7431f83afc70] succeeded in 0.006990680999933829s: None
+[2025-12-22 13:53:24,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c9926c55-63ee-44fa-8060-8c6eced92d4b] received
+[2025-12-22 13:53:24,853: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:53:24,856: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c9926c55-63ee-44fa-8060-8c6eced92d4b] succeeded in 0.004857919999722071s: None
+[2025-12-22 13:53:34,844: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[3cda1a20-56c2-4930-9139-4cbc10e061a9] received
+[2025-12-22 13:53:34,854: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[10982823-11dc-4884-be99-11a175923a48] received
+[2025-12-22 13:53:34,872: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:53:34,872: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:53:34,883: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[10982823-11dc-4884-be99-11a175923a48] succeeded in 0.01615808399992602s: None
+[2025-12-22 13:53:34,887: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[3cda1a20-56c2-4930-9139-4cbc10e061a9] succeeded in 0.022634829000253376s: None
+[2025-12-22 13:53:44,840: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[8a176338-6e28-4b44-a946-38672cff79c6] received
+[2025-12-22 13:53:44,844: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:53:44,848: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[8a176338-6e28-4b44-a946-38672cff79c6] succeeded in 0.006570809000095323s: None
+[2025-12-22 13:53:44,849: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[33054090-fcfc-467b-8d5d-f07f893eedcd] received
+[2025-12-22 13:53:44,853: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:53:44,855: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[33054090-fcfc-467b-8d5d-f07f893eedcd] succeeded in 0.004773196000314783s: None
+[2025-12-22 13:53:54,840: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[44f95216-0585-4282-ac1e-693bae0e0ff6] received
+[2025-12-22 13:53:54,845: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:53:54,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[7299d3cd-8595-4845-b217-6b7986f55c7a] received
+[2025-12-22 13:53:54,849: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[44f95216-0585-4282-ac1e-693bae0e0ff6] succeeded in 0.007777059000090958s: None
+[2025-12-22 13:53:54,854: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:53:54,859: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[7299d3cd-8595-4845-b217-6b7986f55c7a] succeeded in 0.007261344000198733s: None
+[2025-12-22 13:54:04,841: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[1138b4f9-30c2-43a9-8772-7bee5bc62325] received
+[2025-12-22 13:54:04,845: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:54:04,849: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[1138b4f9-30c2-43a9-8772-7bee5bc62325] succeeded in 0.006603469000310724s: None
+[2025-12-22 13:54:04,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ab2bf244-385e-4082-9c1b-ecc01389c6d3] received
+[2025-12-22 13:54:04,854: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:54:04,857: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ab2bf244-385e-4082-9c1b-ecc01389c6d3] succeeded in 0.006312371999683819s: None
+[2025-12-22 13:54:14,841: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[ca96ec9a-e1d4-427f-9a8c-1fdc312cbdba] received
+[2025-12-22 13:54:14,845: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:54:14,849: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[ca96ec9a-e1d4-427f-9a8c-1fdc312cbdba] succeeded in 0.006253165999623889s: None
+[2025-12-22 13:54:14,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[010ad7a1-b23a-40fa-83ca-2517e2f38173] received
+[2025-12-22 13:54:14,853: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:54:14,856: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[010ad7a1-b23a-40fa-83ca-2517e2f38173] succeeded in 0.004559501000130695s: None
+[2025-12-22 13:54:24,842: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[996697f5-c63e-4275-8a57-34ed0c781461] received
+[2025-12-22 13:54:24,846: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:54:24,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f15311c1-28df-4562-ae7b-0ed62dc9a1a4] received
+[2025-12-22 13:54:24,850: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[996697f5-c63e-4275-8a57-34ed0c781461] succeeded in 0.006621694999921601s: None
+[2025-12-22 13:54:24,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:54:24,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f15311c1-28df-4562-ae7b-0ed62dc9a1a4] succeeded in 0.004623678999905678s: None
+[2025-12-22 13:54:34,842: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[46fb79cf-d794-43c7-9c7c-5b4d2128b60d] received
+[2025-12-22 13:54:34,847: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:54:34,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[2120893d-1fe7-4719-bc03-3cdb439b7c15] received
+[2025-12-22 13:54:34,851: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[46fb79cf-d794-43c7-9c7c-5b4d2128b60d] succeeded in 0.006871580999813887s: None
+[2025-12-22 13:54:34,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:54:34,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[2120893d-1fe7-4719-bc03-3cdb439b7c15] succeeded in 0.004666585999984818s: None
+[2025-12-22 13:54:44,843: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[8f3099b7-00d4-4646-bd99-3c94894cc184] received
+[2025-12-22 13:54:44,847: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:54:44,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[27afece3-186a-4b6d-93eb-9360affc6879] received
+[2025-12-22 13:54:44,851: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[8f3099b7-00d4-4646-bd99-3c94894cc184] succeeded in 0.006330781000087882s: None
+[2025-12-22 13:54:44,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:54:44,855: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[27afece3-186a-4b6d-93eb-9360affc6879] succeeded in 0.00441007500012347s: None
+[2025-12-22 13:54:54,844: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[731299e7-4146-4d30-aabc-6aced63dd6f9] received
+[2025-12-22 13:54:54,850: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:54:54,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[1a1da6cd-99c4-483a-8ceb-3fec847ee9ce] received
+[2025-12-22 13:54:54,855: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:54:54,856: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[731299e7-4146-4d30-aabc-6aced63dd6f9] succeeded in 0.009213496000029409s: None
+[2025-12-22 13:54:54,860: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[1a1da6cd-99c4-483a-8ceb-3fec847ee9ce] succeeded in 0.007922818999759329s: None
+[2025-12-22 13:55:04,844: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[5b1242ce-dc15-4c86-bd25-6d81f313d237] received
+[2025-12-22 13:55:04,848: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:55:04,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[9fdb6b47-1a11-420d-ada7-3833c140bcbe] received
+[2025-12-22 13:55:04,853: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[5b1242ce-dc15-4c86-bd25-6d81f313d237] succeeded in 0.007421945000260166s: None
+[2025-12-22 13:55:04,854: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:55:04,857: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[9fdb6b47-1a11-420d-ada7-3833c140bcbe] succeeded in 0.005600755000159552s: None
+[2025-12-22 13:55:14,844: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[be32b908-6208-4f57-9149-44e435a5567d] received
+[2025-12-22 13:55:14,848: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:55:14,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c833d9dd-1fbe-4483-9985-72d993da0b0e] received
+[2025-12-22 13:55:14,852: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[be32b908-6208-4f57-9149-44e435a5567d] succeeded in 0.006800249000207259s: None
+[2025-12-22 13:55:14,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:55:14,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c833d9dd-1fbe-4483-9985-72d993da0b0e] succeeded in 0.004543604999980744s: None
+[2025-12-22 13:55:24,843: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[0c4f8726-e316-4739-b1b3-582565ee44ef] received
+[2025-12-22 13:55:24,847: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:55:24,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[136bc3e9-abbd-4cfc-98b0-a5f9d74cd641] received
+[2025-12-22 13:55:24,852: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[0c4f8726-e316-4739-b1b3-582565ee44ef] succeeded in 0.006729308000103629s: None
+[2025-12-22 13:55:24,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:55:24,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[136bc3e9-abbd-4cfc-98b0-a5f9d74cd641] succeeded in 0.004675358999975288s: None
+[2025-12-22 13:55:34,844: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[6009f509-5117-4411-ac30-818106554bb1] received
+[2025-12-22 13:55:34,848: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:55:34,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[48a06d12-6edf-4556-9e90-8e73fefe3cc9] received
+[2025-12-22 13:55:34,852: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[6009f509-5117-4411-ac30-818106554bb1] succeeded in 0.007143893000375101s: None
+[2025-12-22 13:55:34,854: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:55:34,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[48a06d12-6edf-4556-9e90-8e73fefe3cc9] succeeded in 0.004531174000021565s: None
+[2025-12-22 13:55:44,845: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[92cc9430-81ff-4f37-b51f-b64b375b5cb7] received
+[2025-12-22 13:55:44,849: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:55:44,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c3e04bda-8dc2-4574-891f-16f8fecbc56f] received
+[2025-12-22 13:55:44,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:55:44,853: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[92cc9430-81ff-4f37-b51f-b64b375b5cb7] succeeded in 0.006600459999845043s: None
+[2025-12-22 13:55:44,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c3e04bda-8dc2-4574-891f-16f8fecbc56f] succeeded in 0.004812824000055116s: None
+[2025-12-22 13:55:54,844: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[400edef0-e95c-41b2-9c1e-8e92a7e99eb3] received
+[2025-12-22 13:55:54,848: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:55:54,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f9d1bfe6-fb1c-4070-9e2e-a8018c8bb7c9] received
+[2025-12-22 13:55:54,852: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[400edef0-e95c-41b2-9c1e-8e92a7e99eb3] succeeded in 0.006613495999772567s: None
+[2025-12-22 13:55:54,854: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:55:54,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f9d1bfe6-fb1c-4070-9e2e-a8018c8bb7c9] succeeded in 0.004684473999986949s: None
+[2025-12-22 13:56:04,845: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[360393ff-d5ac-4713-a3e1-7969f7aaa291] received
+[2025-12-22 13:56:04,849: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:56:04,851: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ecafa07d-3f56-42a8-9660-a5e2f14197eb] received
+[2025-12-22 13:56:04,856: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[360393ff-d5ac-4713-a3e1-7969f7aaa291] succeeded in 0.009314547999565548s: None
+[2025-12-22 13:56:04,857: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:56:04,860: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[ecafa07d-3f56-42a8-9660-a5e2f14197eb] succeeded in 0.005787867999970331s: None
+[2025-12-22 13:56:14,845: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[4c970972-a58e-45cc-b020-fe3485f98f25] received
+[2025-12-22 13:56:14,849: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:56:14,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f6a9e000-55d3-4253-ac5b-dd2092dfd631] received
+[2025-12-22 13:56:14,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:56:14,854: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[4c970972-a58e-45cc-b020-fe3485f98f25] succeeded in 0.0067669570003090485s: None
+[2025-12-22 13:56:14,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f6a9e000-55d3-4253-ac5b-dd2092dfd631] succeeded in 0.004596106000008149s: None
+[2025-12-22 13:56:24,845: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[61c42ec1-0cc9-4756-8e23-e44db513acf1] received
+[2025-12-22 13:56:24,849: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:56:24,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c8c39872-333c-4bfb-9b44-767c4809175b] received
+[2025-12-22 13:56:24,853: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[61c42ec1-0cc9-4756-8e23-e44db513acf1] succeeded in 0.007398161999844888s: None
+[2025-12-22 13:56:24,854: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:56:24,857: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c8c39872-333c-4bfb-9b44-767c4809175b] succeeded in 0.005367017000025953s: None
+[2025-12-22 13:56:34,845: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[cb578381-f077-4334-87d2-262d094171fc] received
+[2025-12-22 13:56:34,849: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:56:34,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c7f5fb98-511b-4b05-9de1-fe7d518a3740] received
+[2025-12-22 13:56:34,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:56:34,854: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[cb578381-f077-4334-87d2-262d094171fc] succeeded in 0.0069175759999779984s: None
+[2025-12-22 13:56:34,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c7f5fb98-511b-4b05-9de1-fe7d518a3740] succeeded in 0.004808728000170959s: None
+[2025-12-22 13:56:44,846: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[619ff2b8-e6b2-4b2a-9c71-cebf588f3a4c] received
+[2025-12-22 13:56:44,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[0c4715bd-7f11-4938-84ee-acdf6d7d527c] received
+[2025-12-22 13:56:44,850: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:56:44,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:56:44,854: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[619ff2b8-e6b2-4b2a-9c71-cebf588f3a4c] succeeded in 0.006796621000376035s: None
+[2025-12-22 13:56:44,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[0c4715bd-7f11-4938-84ee-acdf6d7d527c] succeeded in 0.004907581000225036s: None
+[2025-12-22 13:56:54,846: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[be346e0b-daa8-45f1-8f26-53efd396f2a7] received
+[2025-12-22 13:56:54,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[2dfdd555-a948-4f8c-a4d2-201bb1486bc1] received
+[2025-12-22 13:56:54,850: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:56:54,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:56:54,854: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[be346e0b-daa8-45f1-8f26-53efd396f2a7] succeeded in 0.007200297000053979s: None
+[2025-12-22 13:56:54,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[2dfdd555-a948-4f8c-a4d2-201bb1486bc1] succeeded in 0.004740205999951286s: None
+[2025-12-22 13:57:04,846: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[1eab1739-a55b-4157-bf27-2689258bedf6] received
+[2025-12-22 13:57:04,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[51ab0e36-53dc-4722-b0cf-eb16fce04d8b] received
+[2025-12-22 13:57:04,851: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:57:04,853: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:57:04,854: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[1eab1739-a55b-4157-bf27-2689258bedf6] succeeded in 0.0068317019999994955s: None
+[2025-12-22 13:57:04,856: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[51ab0e36-53dc-4722-b0cf-eb16fce04d8b] succeeded in 0.004781434000051377s: None
+[2025-12-22 13:57:14,847: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[267c6444-d332-44f9-a682-dea6a540fed7] received
+[2025-12-22 13:57:14,850: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c46d5ad9-c280-4d17-8116-b68886e9c2ec] received
+[2025-12-22 13:57:14,851: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:57:14,854: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:57:14,855: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[267c6444-d332-44f9-a682-dea6a540fed7] succeeded in 0.0069042470004205825s: None
+[2025-12-22 13:57:14,857: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[c46d5ad9-c280-4d17-8116-b68886e9c2ec] succeeded in 0.004582312999900751s: None
+[2025-12-22 13:57:24,847: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[ca51be09-393e-44c9-b4a6-313e0badbbcb] received
+[2025-12-22 13:57:24,851: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[79d2e1e0-d3a3-4c7a-8310-622768fec5ff] received
+[2025-12-22 13:57:24,852: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:57:24,854: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:57:24,856: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[ca51be09-393e-44c9-b4a6-313e0badbbcb] succeeded in 0.006893923999996332s: None
+[2025-12-22 13:57:24,857: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[79d2e1e0-d3a3-4c7a-8310-622768fec5ff] succeeded in 0.00507031500001176s: None
+[2025-12-22 13:57:34,848: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[6b2bae95-2ceb-4ccf-9557-4504ad14bd2d] received
+[2025-12-22 13:57:34,851: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[66967438-c7cf-496f-b9d3-df263fc5d07a] received
+[2025-12-22 13:57:34,852: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:57:34,854: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:57:34,856: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[6b2bae95-2ceb-4ccf-9557-4504ad14bd2d] succeeded in 0.006545268000081705s: None
+[2025-12-22 13:57:34,857: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[66967438-c7cf-496f-b9d3-df263fc5d07a] succeeded in 0.004602912000336801s: None
+[2025-12-22 13:57:55,567: INFO/MainProcess] Connected to redis://redis:6379/0
+[2025-12-22 13:57:55,572: INFO/MainProcess] mingle: searching for neighbors
+[2025-12-22 13:57:56,584: INFO/MainProcess] mingle: all alone
+[2025-12-22 13:57:56,603: INFO/MainProcess] celery@6c99e538d9b6 ready.
+[2025-12-22 13:58:05,248: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[a70460a4-ea9b-473f-ad11-2a4e9cbe48df] received
+[2025-12-22 13:58:05,251: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[177a6415-6748-457f-a842-b19b67f103bf] received
+[2025-12-22 13:58:05,311: INFO/ForkPoolWorker-3] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:58:05,317: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:58:05,322: INFO/ForkPoolWorker-3] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[177a6415-6748-457f-a842-b19b67f103bf] succeeded in 0.07028139200019723s: None
+[2025-12-22 13:58:05,339: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[a70460a4-ea9b-473f-ad11-2a4e9cbe48df] succeeded in 0.08707625900024141s: None
+[2025-12-22 13:58:15,238: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[60f2cc05-3e58-4776-a147-3ecb1b2242cc] received
+[2025-12-22 13:58:15,243: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:58:15,248: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[60f2cc05-3e58-4776-a147-3ecb1b2242cc] succeeded in 0.00874783400013257s: None
+[2025-12-22 13:58:15,250: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f1a82b21-cf08-4d06-a208-dd161e0be4aa] received
+[2025-12-22 13:58:15,256: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:58:15,261: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[f1a82b21-cf08-4d06-a208-dd161e0be4aa] succeeded in 0.008744720999857236s: None
+[2025-12-22 13:58:25,238: INFO/MainProcess] Task autodealer_backend.deals.tasks.process_pending_offers[5bf6b639-f817-428e-8391-3eefe6f02494] received
+[2025-12-22 13:58:25,243: INFO/ForkPoolWorker-1] Обработка 0 ожидающих офферов
+[2025-12-22 13:58:25,249: INFO/ForkPoolWorker-1] Task autodealer_backend.deals.tasks.process_pending_offers[5bf6b639-f817-428e-8391-3eefe6f02494] succeeded in 0.009181278000141901s: None
+[2025-12-22 13:58:25,250: INFO/MainProcess] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[aae0228e-0eea-4b2a-a5fe-0441021d12f9] received
+[2025-12-22 13:58:25,254: INFO/ForkPoolWorker-1] Запуск закупки авто для 0 активных салонов
+[2025-12-22 13:58:25,258: INFO/ForkPoolWorker-1] Task autodealer_backend.dealers.tasks.purchase_cars_from_suppliers[aae0228e-0eea-4b2a-a5fe-0441021d12f9] succeeded in 0.005360463000215532s: None
